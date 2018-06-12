@@ -197,6 +197,23 @@ export class Static extends Component {
           </nav>
         </div>
       </div>,
+      <div style={{ backgroundImage: `url(${icons})` }}>shh</div>,
+      <div style={{ backgroundImage: `url(${icons})` }}>shh</div>,
+      <div style={{ backgroundImage: `url(${icons})` }}>shh</div>,
+      <div style={{ backgroundImage: `url(${icons})` }}>shh</div>,
+      <div style={{ backgroundImage: `url(${icons})` }}>shh</div>,
+      <div style={{ backgroundImage: `url(${icons})` }}>shh</div>,
+      <div style={{ backgroundImage: `url(${icons})` }}>shh</div>,
+      <div style={{ backgroundImage: `url(${icons})` }}>shh</div>,
+      <div style={{ backgroundImage: `url(${icons})` }}>shh</div>,
+      <div style={{ backgroundImage: `url(${icons})` }}>shh</div>,
+      <div style={{ backgroundImage: `url(${icons})` }}>shh</div>,
+      <div style={{ backgroundImage: `url(${icons})` }}>shh</div>,
+      <div style={{ backgroundImage: `url(${icons})` }}>shh</div>,
+      <div style={{ backgroundImage: `url(${icons})` }}>shh</div>,
+      <div style={{ backgroundImage: `url(${icons})` }}>shh</div>,
+      <div style={{ backgroundImage: `url(${icons})` }}>shh</div>,
+      <div style={{ backgroundImage: `url(${icons})` }}>shh</div>,
       <div className="margin-div_dk" />,
       <div className="container-fluid dk_mf_1 dk_mf_1w3x">
         <div className="container dk_mf_2">
@@ -206,32 +223,24 @@ export class Static extends Component {
                 className="pogoSlider-slide"
                 data-transition="slide"
                 data-duration="1000"
-                id="pogoSlider-slide-1"
                 style={{ backgroundImage: `url(${icons})` }}
-              >
-                {/* <img src={icons} /> */}
-              </div>
+              />
             </a>
             <a href="#">
               <div
-                id="pogoSlider-slide-2"
                 className="pogoSlider-slide "
                 data-transition="slide"
                 data-duration="1000"
-              >
-                wqopiqwop
-                {/* <img src={womens} /> */}
-              </div>
+                style={{ backgroundImage: `url(${icons})` }}
+              />
             </a>
             <a href="#">
               <div
-                id="pogoSlider-slide-3"
                 className="pogoSlider-slide "
                 data-transition="slide"
                 data-duration="1000"
-              >
-                <img src={icons} />
-              </div>{" "}
+                style={{ backgroundImage: `url(${icons})` }}
+              />{" "}
             </a>
           </div>
         </div>
@@ -262,7 +271,9 @@ export class Static extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </div>,
+      <script src="./jquery.pogo-slider.min.js" />,
+      <script src="./main.js" />
     ];
   }
 }
