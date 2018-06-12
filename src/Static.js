@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "./CSS/dkecs.css";
 import "./CSS/pushy.css";
-import "./CSS/pogo-slider.min.css";
 import "./CSS/style.css";
 import "./CSS/theme.css";
 import icons from "./images/icons.png";
@@ -198,43 +197,40 @@ export class Static extends Component {
         </div>
       </div>,
       <div className="margin-div_dk" />,
-      <div className="container-fluid dk_mf_1 dk_mf_1w3x">
-        <div className="container dk_mf_2">
-          <div className="pogoSlider" id="js-main-slider">
-            <a href="#">
-              <div
-                className="pogoSlider-slide"
-                data-transition="slide"
-                data-duration="1000"
-                id="pogoSlider-slide-1"
-                style={{ backgroundImage: `url(${icons})` }}
-              >
-                {/* <img src={icons} /> */}
-              </div>
-            </a>
-            <a href="#">
-              <div
-                id="pogoSlider-slide-2"
-                className="pogoSlider-slide "
-                data-transition="slide"
-                data-duration="1000"
-              >
-                wqopiqwop
-                {/* <img src={womens} /> */}
-              </div>
-            </a>
-            <a href="#">
-              <div
-                id="pogoSlider-slide-3"
-                className="pogoSlider-slide "
-                data-transition="slide"
-                data-duration="1000"
-              >
-                <img src={icons} />
-              </div>{" "}
-            </a>
+      <div
+        id="carouselExampleControls"
+        class="carousel slide"
+        data-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src={mens} alt="First slide" />
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src={womens} alt="Second slide" />
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src={kids} alt="Third slide" />
           </div>
         </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselExampleControls"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true" />
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselExampleControls"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true" />
+          <span class="sr-only">Next</span>
+        </a>
       </div>,
       <div className="container-fluid dk_mf2_101">
         <div className="container dk_mf2_102">
@@ -262,7 +258,9 @@ export class Static extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </div>,
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js" />,
+      <script src="./jquery.pogo-slider.min.js" />
     ];
   }
 }
