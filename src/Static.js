@@ -7,16 +7,18 @@ import icons from "./images/icons.png";
 import mens from "./images/mens.jpg";
 import womens from "./images/womens.jpg";
 import kids from "./images/kids.jpg";
+import image from "./images/image.png";
+import menu from "./images/menu.png";
 export class Static extends Component {
   render() {
     return [
       <div className="container-fluid dk_mf2_21">
         <div className="dk_mf2_21_a">
           <div className="col-xs-1 dk_m2f_22">
-            <img src={icons} className="dk_mf2_31 side-left-pushy-button" />
+            <img src={menu} className="dk_mf2_31 side-left-pushy-button" />
           </div>
           <div className="col-xs-9 dk_mf2_23">
-            <img src={icons} className="dk_mf2_32" />
+            <img src={image} className="dk_mf2_32" />
           </div>
           <div className="col-xs-1 dk_mf2_24">
             <a href="login.php" className="dk_mf2_33 dropbtn_dk1">
@@ -256,6 +258,37 @@ export class Static extends Component {
                 </div>
               </a>
             </div>
+          </div>
+        </div>
+      </div>,
+      <div class="dk_mf_562 dk_mf_562cat_02 modal" id="myModal1cate123">
+        <div class="col-xs-12 dk_mf2_852 dk_mf2_852categ_01">
+          <div class="dk_mf2_853 close">
+            <span class="dk_mf2_854" />
+          </div>
+          <div class="dk_mf2_856">
+            <img src={image} class="dk_mf2_857" />
+          </div>
+        </div>
+        <div class="modal-content dk_mf_561 dk_mf_561cat_02">
+          <div class="dk_mf_455 dk_mf_455d3xd dk_mf2_1203_dtda">
+            <ul class="dk_mf2_1201">
+              <li class="dk_mf2_1202">
+                <a href="product_page.php" class="dk_mf2_1203">
+                  T-shirt
+                </a>
+              </li>
+              <li class="dk_mf2_1202">
+                <a href="product_page.php" class="dk_mf2_1203">
+                  Shirt
+                </a>
+              </li>
+              <li class="dk_mf2_1202">
+                <a href="product_page.php" class="dk_mf2_1203">
+                  Jeans
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

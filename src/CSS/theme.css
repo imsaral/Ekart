@@ -253,7 +253,7 @@ input:focus, textarea:focus, select:focus{
     display: inline-block;
 }
 .login-fb-logo {
-    background:url(../images/icons.png);
+    background:url(../images/shopping-cart.svg);
     background-size: 1377px 106px;
     background-position:-704px -28px;
 	width: 28px;
@@ -265,7 +265,7 @@ input:focus, textarea:focus, select:focus{
     left: 15px;
 }
 .login-gplus-logo {
-    background: url(../images/icons.png);
+    background: url(../images/shopping-cart.svg);
     background-size: 1377px 106px;
     background-position:-647px -28px;
 	width: 23px;
@@ -1936,7 +1936,7 @@ img.cloudzoom {
 	border:1px solid #9cd6de;
 }
 .dk_mf_552{
-	background-image: url(../images/icons.png);
+	background-image: url(../images/shopping-cart.svg);
     background-size: 1404px 105px;
     width: 34px;
     height: 37px;
@@ -2708,7 +2708,7 @@ dk_mf_705{
     display: block;
 }
 .dk_mf2_17 {
-    background: url(../images/icons.png);
+    background: url(../images/shopping-cart.svg);
     background-size: 1272px 105px;
     display: inline-block;
     width: 21px;
@@ -2823,7 +2823,7 @@ dk_mf_705{
     padding:18px 20px 0 0;
 }
 .dk_mf2_34 {
-    background: url(../images/icons.png);
+    background: url(../images/shopping-cart.svg);
     background-size: 1305px 105px;
     display: inline-block;
     width: 21px;
@@ -2836,7 +2836,7 @@ dk_mf_705{
     margin-left: 15px;
 }
 .dk_mf2_35 {
-    background: url(../images/icons.png);
+    background: url(../images/shopping-cart.svg);
     background-size: 1272px 105px;
     display: inline-block;
     width: 21px;
@@ -3523,7 +3523,7 @@ dk_mf_705{
 	background-color:#FFF;
 }
 .dk_mf2_854 {
-    background: url(../images/icons.png);
+    background: url(../images/shopping-cart.svg);
     background-size: 1305px 105px;
     display: inline-block;
     width: 22px;
