@@ -1,9 +1,25 @@
 .d-block {
-  padding-top: 35px;
   width: 100%;
   height: 400px;
 }
-#carouselExampleControls {
-  width: 100%;
-  height: 100%;
+#back-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 9999999;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  line-height: 30px;
+  background: #5c5faf;
+  color: #fff;
+  cursor: pointer;
+  border: 0;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: opacity 0.2s ease-out;
+  opacity: 1;
+}
+#cart {
+  color: rgba(138, 137, 137, 0.726);
 }

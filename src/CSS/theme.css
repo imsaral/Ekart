@@ -253,7 +253,7 @@ input:focus, textarea:focus, select:focus{
     display: inline-block;
 }
 .login-fb-logo {
-    background:url(../images/icons.png);
+    background:url(../images/menu.png);
     background-size: 1377px 106px;
     background-position:-704px -28px;
 	width: 28px;
@@ -265,7 +265,7 @@ input:focus, textarea:focus, select:focus{
     left: 15px;
 }
 .login-gplus-logo {
-    background: url(../images/icons.png);
+    background: url(../images/menu.png);
     background-size: 1377px 106px;
     background-position:-647px -28px;
 	width: 23px;
@@ -1936,7 +1936,7 @@ img.cloudzoom {
 	border:1px solid #9cd6de;
 }
 .dk_mf_552{
-	background-image: url(../images/icons.png);
+	background-image: url(../images/menu.png);
     background-size: 1404px 105px;
     width: 34px;
     height: 37px;
@@ -2696,25 +2696,23 @@ dk_mf_705{
 .dk_mf2_15 {
     display:inline-block;
     width:20%;
-    margin-left: -5px;
+	margin-left: -20px;
+	margin-top: -15px;
     float:left;
 }
 .dk_mf2_16{
     display:block;
     float:right;
 }
-.dk_mf2_17 {
+ .dk_mf2_17 {
     padding: 20px;
     display: block;
 }
 .dk_mf2_17 {
-    background: url(../images/icons.png);
-    background-size: 1272px 105px;
     display: inline-block;
     width: 21px;
     height: 21px;
-    background-position: -754px 18px;
-}
+} 
 .dk_mf2_18plus {
     background-color:#5c5faf;
     width: 18px;
@@ -2726,7 +2724,7 @@ dk_mf_705{
     font-size: 14px;
     color: #FFF;
     font-weight: 600;
-    margin-top: -36px;
+    margin-top: -40px;
     margin-left: 19px;
 }
 
@@ -2823,7 +2821,7 @@ dk_mf_705{
     padding:18px 20px 0 0;
 }
 .dk_mf2_34 {
-    background: url(../images/icons.png);
+    background: url(../images/menu.png);
     background-size: 1305px 105px;
     display: inline-block;
     width: 21px;
@@ -2836,7 +2834,7 @@ dk_mf_705{
     margin-left: 15px;
 }
 .dk_mf2_35 {
-    background: url(../images/icons.png);
+    background: url(../images/menu.png);
     background-size: 1272px 105px;
     display: inline-block;
     width: 21px;
@@ -3523,7 +3521,7 @@ dk_mf_705{
 	background-color:#FFF;
 }
 .dk_mf2_854 {
-    background: url(../images/icons.png);
+    background: url(../images/menu.png);
     background-size: 1305px 105px;
     display: inline-block;
     width: 22px;

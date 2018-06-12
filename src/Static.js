@@ -3,20 +3,24 @@ import "./CSS/dkecs.css";
 import "./CSS/pushy.css";
 import "./CSS/style.css";
 import "./CSS/theme.css";
-import icons from "./images/icons.png";
 import mens from "./images/mens.jpg";
 import womens from "./images/womens.jpg";
 import kids from "./images/kids.jpg";
+import menu from "./images/menu.png";
+import image from "./images/image.png";
+import mens1 from "./images/mens1.jpg";
+import womens1 from "./images/womens1.jpg";
+import kid1 from "./images/kid1.jpg";
 export class Static extends Component {
   render() {
     return [
       <div className="container-fluid dk_mf2_21">
         <div className="dk_mf2_21_a">
           <div className="col-xs-1 dk_m2f_22">
-            <img src={icons} className="dk_mf2_31 side-left-pushy-button" />
+            <img src={menu} className="dk_mf2_31 side-left-pushy-button" />
           </div>
           <div className="col-xs-9 dk_mf2_23">
-            <img src={icons} className="dk_mf2_32" />
+            <img src={image} className="dk_mf2_32" />
           </div>
           <div className="col-xs-1 dk_mf2_24">
             <a href="login.php" className="dk_mf2_33 dropbtn_dk1">
@@ -35,7 +39,7 @@ export class Static extends Component {
             <input
               type="text"
               className="dk_mf2_42 website_search"
-              placeholder="Seacrh..."
+              placeholder="Search..."
             />
           </div>
           <div className="col-xs-3 dk_mf2_43">
@@ -107,14 +111,15 @@ export class Static extends Component {
         </div>
         <div className="dk_mf2_2">
           <div className="dk_mf2_3 logo">
-            <img src={icons} className="dk_mf2_4" />
+            <img src={image} className="dk_mf2_4" />
           </div>
           <div className="dk_mf2_5">
             <div className="dk_mf2_6 search_input">
               <input
                 type="text"
+                id="SearchQuery"
                 className="dk_mf2_8 website_search"
-                placeholder="Seacrh..."
+                placeholder="Search..."
               />
             </div>
             <div className="dk_mf2_7 serach_button">
@@ -127,8 +132,9 @@ export class Static extends Component {
           </div>
           <div className="dk_mf2_15 cart-button">
             <a href="cart.php" className="dk_mf2_16">
-              <span className="dk_mf2_17" />
-              <span className="dk_mf2_18plus">2</span>
+              <i id="cart" className="fas fa-shopping-cart fa-2x dk_mf2_17">
+                <span className="dk_mf2_18plus">2</span>
+              </i>
             </a>
           </div>
         </div>
@@ -199,37 +205,37 @@ export class Static extends Component {
       <div className="margin-div_dk" />,
       <div
         id="carouselExampleControls"
-        class="carousel slide"
+        className="carousel slide"
         data-ride="carousel"
       >
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="d-block w-100" src={mens} alt="First slide" />
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <img className="d-block w-100" src={mens} alt="First slide" />
           </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src={womens} alt="Second slide" />
+          <div className="carousel-item">
+            <img className="d-block w-100" src={womens} alt="Second slide" />
           </div>
-          <div class="carousel-item">
-            <img class="d-block w-100" src={kids} alt="Third slide" />
+          <div className="carousel-item">
+            <img className="d-block w-100" src={kids} alt="Third slide" />
           </div>
         </div>
         <a
-          class="carousel-control-prev"
+          className="carousel-control-prev"
           href="#carouselExampleControls"
           role="button"
           data-slide="prev"
         >
-          <span class="carousel-control-prev-icon" aria-hidden="true" />
-          <span class="sr-only">Previous</span>
+          <span className="carousel-control-prev-icon" aria-hidden="true" />
+          <span className="sr-only">Previous</span>
         </a>
         <a
-          class="carousel-control-next"
+          className="carousel-control-next"
           href="#carouselExampleControls"
           role="button"
           data-slide="next"
         >
-          <span class="carousel-control-next-icon" aria-hidden="true" />
-          <span class="sr-only">Next</span>
+          <span className="carousel-control-next-icon" aria-hidden="true" />
+          <span className="sr-only">Next</span>
         </a>
       </div>,
       <div className="container-fluid dk_mf2_101">
@@ -238,26 +244,33 @@ export class Static extends Component {
             <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12 dk_mf2_104">
               <a href="product_page.php">
                 <div className="col-xs-12 dk_mf2_105">
-                  <img src={icons} className="dk_mf2_106" />
+                  <img src={mens1} className="dk_mf2_106" />
                 </div>
               </a>
             </div>
             <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12 dk_mf2_104">
               <a href="product_page.php">
                 <div className="col-xs-12 dk_mf2_105">
-                  <img src={icons} className="dk_mf2_106" />
+                  <img src={womens1} className="dk_mf2_106" />
                 </div>
               </a>
             </div>
             <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12 dk_mf2_104">
               <a href="product_page.php">
                 <div className="col-xs-12 dk_mf2_105">
-                  <img src={icons} className="dk_mf2_106" />
+                  <img src={kid1} className="dk_mf2_106" />
                 </div>
               </a>
             </div>
           </div>
         </div>
+      </div>,
+      <a href="#" id="back-top" title="Back to top">
+        {" "}
+        &uarr;
+      </a>,
+      <div className="container-fluid dkf_1">
+        Copyright 2018 xyz.com. All Rights Reserved.
       </div>
     ];
   }
