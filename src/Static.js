@@ -11,7 +11,61 @@ import image from "./images/image.png";
 import mens1 from "./images/mens1.jpg";
 import womens1 from "./images/womens1.jpg";
 import kid1 from "./images/kid1.jpg";
+
+class Carousel extends Component {
+  render() {
+    return (
+      <div
+        id="carouselExampleControls"
+        className="carousel slide"
+        data-ride="carousel"
+      >
+        <div className="carousel-inner">
+          <div className="carousel-item active">
+            <img className="d-block w-100" src={mens} alt="First slide" />
+          </div>
+          <div className="carousel-item">
+            <img className="d-block w-100" src={womens} alt="Second slide" />
+          </div>
+          <div className="carousel-item">
+            <img className="d-block w-100" src={kids} alt="Third slide" />
+          </div>
+        </div>
+        <a
+          className="carousel-control-prev"
+          href="#carouselExampleControls"
+          role="button"
+          data-slide="prev"
+        >
+          <span className="carousel-control-prev-icon" aria-hidden="true" />
+          <span className="sr-only">Previous</span>
+        </a>
+        <a
+          className="carousel-control-next"
+          href="#carouselExampleControls"
+          role="button"
+          data-slide="next"
+        >
+          <span className="carousel-control-next-icon" aria-hidden="true" />
+          <span className="sr-only">Next</span>
+        </a>
+      </div>
+    );
+  }
+}
+
 export class Static extends Component {
+  componentDidMount() {
+    var that = this;
+    var url =
+      "http://101.53.137.41/api/?cat=Apparels_Kids_Boys_SuitsandBlazers_Waistcoats&count=100&offset=0";
+
+    fetch(url)
+      .then(response => response.json())
+      .then(response => {
+        console.log(response);
+      });
+  }
   render() {
     return [
       <div className="container-fluid dk_mf2_21">
@@ -203,41 +257,151 @@ export class Static extends Component {
         </div>
       </div>,
       <div className="margin-div_dk" />,
-      <div
-        id="carouselExampleControls"
-        className="carousel slide"
-        data-ride="carousel"
-      >
-        <div className="carousel-inner">
-          <div className="carousel-item active">
-            <img className="d-block w-100" src={mens} alt="First slide" />
-          </div>
-          <div className="carousel-item">
-            <img className="d-block w-100" src={womens} alt="Second slide" />
-          </div>
-          <div className="carousel-item">
-            <img className="d-block w-100" src={kids} alt="Third slide" />
-          </div>
+      <a class="navbar-logo" href="#" />,
+      <nav class="navbar-inverse nav-upper">
+        <div class="container-fluid">
+          <ul class="nav navbar-upper">
+            <li>
+              <a href="#">Profile Image</a>
+            </li>
+            <li>
+              <a href="#">Cart Image</a>
+            </li>
+          </ul>
         </div>
-        <a
-          className="carousel-control-prev"
-          href="#carouselExampleControls"
-          role="button"
-          data-slide="prev"
-        >
-          <span className="carousel-control-prev-icon" aria-hidden="true" />
-          <span className="sr-only">Previous</span>
+      </nav>,
+
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          Ekart
         </a>
-        <a
-          className="carousel-control-next"
-          href="#carouselExampleControls"
-          role="button"
-          data-slide="next"
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
-          <span className="carousel-control-next-icon" aria-hidden="true" />
-          <span className="sr-only">Next</span>
-        </a>
-      </div>,
+          <span class="navbar-toggler-icon" />
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            {/* <li class="nav-item active">
+              <a class="nav-link" href="#">
+                Home <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                Link
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">
+                Disabled
+              </a>
+            </li> */}
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownMenuLink"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Men
+              </a>
+              <div
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <a class="dropdown-item" href="#">
+                  Top Wear
+                </a>
+                <a class="dropdown-item" href="#">
+                  Bottom Wear
+                </a>
+                <a class="dropdown-item" href="#">
+                  Indian and Festice Wear
+                </a>
+                <a class="dropdown-item" href="#">
+                  Suits and Blazers
+                </a>
+                <a class="dropdown-item" href="#">
+                  Inner Wear and Sleepwear
+                </a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownMenuLink"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Women
+              </a>
+              <div
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <a class="dropdown-item" href="#">
+                  Western Wear
+                </a>
+                <a class="dropdown-item" href="#">
+                  Indian and Fusin Wear
+                </a>
+                <a class="dropdown-item" href="#">
+                  Sports and Active Wear
+                </a>
+                <a class="dropdown-item" href="#">
+                  Lingerie and Sleepwear
+                </a>
+              </div>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownMenuLink"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Kids
+              </a>
+              <div
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <a class="dropdown-item" href="#">
+                  Boys Clothing
+                </a>
+                <a class="dropdown-item" href="#">
+                  Girls Clothing
+                </a>
+              </div>
+            </li>
+          </ul>
+          {/* <form class="form-inline my-2 my-lg-0">
+            <input
+              class="form-control mr-sm-2"
+              type="search"
+              placeholder="Search"
+            />
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+              Search
+            </button>
+          </form> */}
+        </div>
+      </nav>,
+      <Carousel />,
       <div className="container-fluid dk_mf2_101">
         <div className="container dk_mf2_102">
           <div className="col-xs-12 dk_mf2_103">

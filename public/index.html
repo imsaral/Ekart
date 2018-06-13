@@ -36,37 +36,6 @@
     You need to enable JavaScript to run this app.
   </noscript>
   <div id="root"></div>
-  <script src="offcanvass/pushy.js"></script>
-  <script>
-    var optionSideLeft = {
-      button: "side-left-pushy-button",
-      container: "container",
-      containerPush: false,
-      menuPosition: "left",
-      menuOpen: false,
-      overlayShow: true
-    }
-    $("#sideLeftPushy").Pushy(optionSideLeft);    
-  </script>
-  <!-------------------offcanvas-js-close--------------------------------------->
-
-  <!-----------------category-box-script------------------------------>
-  <script>
-    $('.my-btn').on('click', function () {
-      $('#' + $(this).data('modal')).css('display', 'block');
-    })
-
-    $('.close').on('click', function () {
-      $('.modal').hide();
-    })
-
-    // When the user clicks anywhere outside of the modal, close it
-    window.onclick = function (event) {
-      if (event.target.className == 'modal') {
-        $('.modal').hide();
-      }
-    }
-  </script>
 </body>
 
 </html>

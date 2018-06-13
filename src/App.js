@@ -19,15 +19,6 @@ export default class App extends Component {
       "http://101.53.137.41/api/?cat=Apparels_Women_WesternWear_Shirts,Tops-Tunics_Tunics&count=100&offset=0;"
     );
     oReq.send();*/
-    fetch(
-      "http://101.53.137.41/api/?cat=Apparels_Women_WesternWear_Shirts,Tops-Tunics_Tunics&count=100&offset=0;"
-    )
-      .then(function(response) {
-        return response.json();
-      })
-      .then(function(myJson) {
-        console.log(myJson);
-      });
     return <Static />;
   }
 }
