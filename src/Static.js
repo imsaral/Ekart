@@ -71,20 +71,26 @@ export class Static extends Component {
       <div className="container-fluid dk_mf2_21">
         <div className="dk_mf2_21_a">
           <div className="col-xs-1 dk_m2f_22">
-            <img src={menu} className="dk_mf2_31 side-left-pushy-button" />
+            <img
+              src={menu}
+              className="dk_mf2_31 side-left-pushy-button menu-btn"
+            />
           </div>
           <div className="col-xs-9 dk_mf2_23">
             <img src={image} className="dk_mf2_32" />
           </div>
           <div className="col-xs-1 dk_mf2_24">
             <a href="login.php" className="dk_mf2_33 dropbtn_dk1">
-              <span className="dk_mf2_34" />
+              <i className="fas fa-user user">
+                <span className="dk_mf2_34" />
+              </i>
             </a>
           </div>
           <div className="col-xs-1 dk_mf2_25">
             <a href="cart.php" className="dk_mf2_36">
-              <span className="dk_mf2_35" />
-              <span className="dk_mf2_35plus">2</span>
+              <i id="cart" className="fas fa-shopping-cart dk_mf2_35">
+                <span className="dk_mf2_35plus">2</span>
+              </i>
             </a>
           </div>
         </div>
