@@ -2818,15 +2818,14 @@ dk_mf_705{
 }
 .dk_mf2_33 {
     display: block;
-    padding:18px 20px 0 0;
+	padding:18px 20px 0 0;
+	width: 20px;
+	height: 20px;
 }
 .dk_mf2_34 {
-    background: url(../images/menu.png);
-    background-size: 1305px 105px;
     display: inline-block;
-    width: 21px;
-    height: 21px;
-    background-position: -754px 0;
+    width: 10px;
+    height: 10px;
 }
 .dk_mf2_35 {
     padding: 20px;
@@ -2834,12 +2833,10 @@ dk_mf_705{
     margin-left: 15px;
 }
 .dk_mf2_35 {
-    background: url(../images/menu.png);
-    background-size: 1272px 105px;
     display: inline-block;
     width: 21px;
-    height: 21px;
-    background-position: -754px 18px;
+	height: 21px;
+	font-size: 20px;
 }
 .dk_mf2_35plus {
     background-color: #ff0072;
@@ -2852,11 +2849,11 @@ dk_mf_705{
     font-size: 14px;
     color: #FFF;
     font-weight: 600;
-    margin-top: -36px;
-    margin-left: 26px;
+    margin-top: -30px;
+    margin-left: 10px;
 }
 .dk_mf2_36{
-    margin-left:-26px;
+    margin-left:-50px;
     display:block;
 }
 .dk_mf2_41{
