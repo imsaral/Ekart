@@ -13,14 +13,14 @@
 
 .overlay-content {
   position: relative;
-  top: 25%;
+  top: 5%;
   width: 100%;
   text-align: center;
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 
 .overlay a {
-  padding: 8px;
+  padding: 4px;
   text-decoration: none;
   font-size: 36px;
   color: #818181;
@@ -30,13 +30,13 @@
 
 .overlay a:hover,
 .overlay a:focus {
-  color: #f1f1f1;
+  color: black;
 }
 
 .overlay .btnclose2 {
   position: absolute;
-  top: 20px;
-  right: 45px;
+  top: 0px;
+  right: 25px;
   font-size: 60px;
 }
 
@@ -49,6 +49,12 @@
     top: 15px;
     right: 35px;
   }
+}
+
+#innerMyNav {
+  padding-bottom: 6%;
+  height: auto;
+  background-color: white;
 }
 
 .d-block {

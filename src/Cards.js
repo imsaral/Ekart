@@ -40,8 +40,8 @@ export class Cards extends Component {
     data: []
   };
   componentDidMount() {
-    var url =
-      "http://101.53.137.41/api/?cat=Apparels_Men_Polos-T-Shirts&count=100&offset=0;";
+    var url = this.props.url;
+    // "http://101.53.137.41/api/?cat=Apparels_Men_Polos-T-Shirts&count=100&offset=0";
     fetch(url)
       .then(response => response.json())
       .then(response => {
