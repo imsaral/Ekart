@@ -2830,7 +2830,8 @@ dk_mf_705{
 .dk_mf2_35 {
     padding: 20px;
     display: block;
-    margin-left: 15px;
+	margin-left: 15px;
+	margin-right: 10px;
 }
 .dk_mf2_35 {
     display: inline-block;
@@ -2853,7 +2854,7 @@ dk_mf_705{
     margin-left: 10px;
 }
 .dk_mf2_36{
-    margin-left:-50px;
+    margin-left:-30px;
     display:block;
 }
 .dk_mf2_41{
@@ -2893,6 +2894,7 @@ dk_mf_705{
 	padding-right: 10px;
 }
 .dk_mf2_82 li a{
+	cursor: pointer;
 	color:#8e8e8e;
     font-size: 12px;
     font-weight: 500;
