@@ -57,10 +57,10 @@ export class Navbar extends Component {
                       <Link to="men_ethnicwear">Indian and Festive Wear</Link>
                     </li>
                     <li>
-                      <Link to="men_suits">Suits and Blazers</Link>
+                      <Link to="men_jackets">Jackets</Link>
                     </li>
                     <li>
-                      <Link to="men_innerwear">Inner Wear and Sleepwear</Link>
+                      <Link to="men_innerwear">Inner Wear</Link>
                     </li>
                   </ul>
                   <Link to="women">Women</Link>
@@ -75,7 +75,7 @@ export class Navbar extends Component {
                       <Link to="women_activewear">Sports and Active Wear</Link>
                     </li>
                     <li>
-                      <Link to="women_innerwear">Lingerie and Sleepwear</Link>
+                      <Link to="women_sleepwear">Sleepwear</Link>
                     </li>
                   </ul>
                   <Link to="kids">Kids</Link>
@@ -212,10 +212,10 @@ export class Navbar extends Component {
                     <Link to="men_ethnicwear">Indian and Festive Wear</Link>
                   </li>
                   <li>
-                    <Link to="men_suits">Suits and Blazers</Link>
+                    <Link to="men_jackets">Jackets</Link>
                   </li>
                   <li>
-                    <Link to="men_innerwear">Inner Wear and Sleepwear</Link>
+                    <Link to="men_innerwear">Inner Wear</Link>
                   </li>
                 </ul>
               </li>
@@ -232,7 +232,7 @@ export class Navbar extends Component {
                     <Link to="women_activewear">Sports and Active Wear</Link>
                   </li>
                   <li>
-                    <Link to="women_innerwear">Lingerie and Sleepwear</Link>
+                    <Link to="women_sleepwear">Sleepwear</Link>
                   </li>
                 </ul>
               </li>

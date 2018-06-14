@@ -114,8 +114,8 @@ export class Cards extends Component {
       this.props.handler(e);
     });
   };
-
   componentDidMount() {
+    // Typical usage (don't forget to compare props):
     var url = this.props.url;
     // "http://101.53.137.41/api/?cat=Apparels_Men_Polos-T-Shirts&count=100&offset=0";
     fetch(url)
@@ -132,6 +132,28 @@ export class Cards extends Component {
           console.log(this.state.data);
         });
       });
+  }
+
+  componentDidUpdate(prevProps) {
+    // Typical usage (don't forget to compare props):
+    if (this.props.url !== prevProps.url) {
+      var url = this.props.url;
+      // "http://101.53.137.41/api/?cat=Apparels_Men_Polos-T-Shirts&count=100&offset=0";
+      fetch(url)
+        .then(response => response.json())
+        .then(response => {
+          var key;
+          var newArray = [];
+          for (key in response) {
+            if (response.hasOwnProperty(key)) {
+              newArray.push(response[key]);
+            }
+          }
+          this.setState({ data: newArray }, () => {
+            console.log(this.state.data);
+          });
+        });
+    }
   }
   renderProducts = () => {
     const elements = [];
@@ -165,6 +187,7 @@ export class Cards extends Component {
     return elements;
   };
   render() {
+    // this.display();
     return [
       <div className="container-fluid dk_mf2_151">
         <div className="container dk_mf2_152">{this.renderProducts()}</div>

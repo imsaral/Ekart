@@ -70,25 +70,50 @@ export class Static extends Component {
   }
 
   render() {
+    // this.forceUpdate();
+    // console.log("sjb", this.props.url);
     var handler = this.handler;
-    return [
-      <Navbar items={this.state.itemsInCart} />,
-      <div className="margin-div_dk" />,
-      <Carousel />,
-      <Categories />,
-      <a href="#" id="back-top" title="Back to top">
-        {" "}
-        &uarr;
-      </a>,
-      <Modal />,
-      <Cards
-        url="http://101.53.137.41/api/?cat=Apparels_Men_Polos-T-Shirts&count=100&offset=0"
-        handler={handler.bind(this)}
-        items={this.state.itemsInCart}
-      />,
-      <div className="container-fluid dkf_1">
-        Copyright 2018 xyz.com. All Rights Reserved.
-      </div>
-    ];
+    if (
+      this.props.url ===
+      "http://101.53.137.41/api/?cat=Apparels_Men_Polos-T-Shirts&count=100&offset=0"
+    ) {
+      return [
+        <Navbar items={this.state.itemsInCart} />,
+        <div className="margin-div_dk" />,
+        <Carousel />,
+        <Categories />,
+        <a href="#" id="back-top" title="Back to top">
+          {" "}
+          &uarr;
+        </a>,
+        <Modal />,
+        <Cards
+          url={this.props.url}
+          handler={handler.bind(this)}
+          items={this.state.itemsInCart}
+        />,
+        <div className="container-fluid dkf_1">
+          Copyright 2018 xyz.com. All Rights Reserved.
+        </div>
+      ];
+    } else {
+      return [
+        <Navbar items={this.state.itemsInCart} />,
+        <div className="margin-div_dk" />,
+        <a href="#" id="back-top" title="Back to top">
+          {" "}
+          &uarr;
+        </a>,
+        <Modal />,
+        <Cards
+          url={this.props.url}
+          handler={handler.bind(this)}
+          items={this.state.itemsInCart}
+        />,
+        <div className="container-fluid dkf_1">
+          Copyright 2018 xyz.com. All Rights Reserved.
+        </div>
+      ];
+    }
   }
 }
