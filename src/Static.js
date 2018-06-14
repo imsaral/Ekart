@@ -252,6 +252,56 @@ class Carousel extends Component {
 }
 
 export class Static extends Component {
+<<<<<<< HEAD
+=======
+  state = {
+    products: []
+  };
+  componentDidMount() {
+    var that = this;
+    var url =
+      "http://101.53.137.41/api/?cat=Apparels_Kids_Boys_SuitsandBlazers_Waistcoats&count=100&offset=0";
+
+    fetch(url)
+      .then(response => response.json())
+      .then(response => {
+        var elements = [];
+        for (let key in response) {
+          elements.push(response[key]);
+        }
+        console.log(elements);
+        // const x = Object.keys(response).map(key => response[key]);
+        // console.log(typeof x);
+        // console.log(typeof response);
+        // console.log("Array", x[0]);
+        // console.log("Object", response[0]);
+        //var x = Object.values(response);
+        // console.log(x);
+        // var y = [1, 2];
+        // console.log(y, typeof y);
+        // this.setState({
+        //   products: elements
+        // });
+        //console.log(typeof x);
+      });
+  }
+  renderProducts = () => {
+    const elements = [];
+    for (let index = 0; index < 10; index++) {
+      elements.push(
+        <div key={index}>
+          {/* <DrawButton handleClick={() => this.drawPlayerCards(index)}>
+            Draw One
+          </DrawButton> */}
+          {/* <CardList list={this.state.playerCards[index] || []} /> */}
+          {this.state.products[index]}
+        </div>
+      );
+    }
+
+    return elements;
+  };
+>>>>>>> 3d17066c4db6c0ce42035413842dd50572959bbe
   closeNav() {
     document.getElementById("myNav").style.width = "0%";
   }
@@ -274,11 +324,49 @@ export class Static extends Component {
               >
                 &times;
               </a>
-              <div className="overlay-content">
-                <a href="#">About</a>
-                <a href="#">Services</a>
-                <a href="#">Clients</a>
-                <a href="#">Contact</a>
+              <div class="overlay-content">
+                <a href="#">Men</a>
+                <ul className="dk_mf2_58">
+                  <li>
+                    <a href="product_page.php">Top Wear</a>
+                  </li>
+                  <li>
+                    <a href="product_page.php">Bottom Wear</a>
+                  </li>
+                  <li>
+                    <a href="product_page.php">Indian and Festive Wear</a>
+                  </li>
+                  <li>
+                    <a href="product_page.php">Suits and Blazers</a>
+                  </li>
+                  <li>
+                    <a href="product_page.php">Inner Wear and Sleepwear</a>
+                  </li>
+                </ul>
+                <a href="#">Women</a>
+                <ul className="dk_mf2_58">
+                  <li>
+                    <a href="product_page.php">Weatern Wear</a>
+                  </li>
+                  <li>
+                    <a href="product_page.php">Indian and Fusion Wear</a>
+                  </li>
+                  <li>
+                    <a href="product_page.php">Sports and Active Wear</a>
+                  </li>
+                  <li>
+                    <a href="product_page.php">Lingerie and Sleepwear</a>
+                  </li>
+                </ul>
+                <a href="#">Kids</a>
+                <ul className="dk_mf2_58">
+                  <li>
+                    <a href="#">Boys Clothing</a>
+                  </li>
+                  <li>
+                    <a href="#">Girls Clothing</a>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
@@ -396,13 +484,19 @@ export class Static extends Component {
                 <a href="#">Men</a>
                 <ul className="dk_mf2_58">
                   <li>
-                    <a href="product_page.php">Ethnic Wear</a>
+                    <a href="product_page.php">Top Wear</a>
                   </li>
                   <li>
-                    <a href="product_page.php">Illustrator</a>
+                    <a href="product_page.php">Bottom Wear</a>
                   </li>
                   <li>
-                    <a href="product_page.php">Web Design</a>
+                    <a href="product_page.php">Indian and Festive Wear</a>
+                  </li>
+                  <li>
+                    <a href="product_page.php">Suits and Blazers</a>
+                  </li>
+                  <li>
+                    <a href="product_page.php">Inner Wear and Sleepwear</a>
                   </li>
                 </ul>
               </li>
@@ -410,31 +504,16 @@ export class Static extends Component {
                 <a href="#">Women</a>
                 <ul className="dk_mf2_58">
                   <li>
-                    <a href="product_page.php">Ethnic Wear</a>
+                    <a href="product_page.php">Weatern Wear</a>
                   </li>
                   <li>
-                    <a href="product_page.php">Designer Wear</a>
+                    <a href="product_page.php">Indian and Fusion Wear</a>
                   </li>
                   <li>
-                    <a href="product_page.php">Watches & Wearables</a>
+                    <a href="product_page.php">Sports and Active Wear</a>
                   </li>
                   <li>
-                    <a href="product_page.php">Ethnic Wear</a>
-                  </li>
-                  <li>
-                    <a href="product_page.php">Designer Wear</a>
-                  </li>
-                  <li>
-                    <a href="product_page.php">Watches & Wearables</a>
-                  </li>
-                  <li>
-                    <a href="product_page.php">Ethnic Wear</a>
-                  </li>
-                  <li>
-                    <a href="product_page.php">Designer Wear</a>
-                  </li>
-                  <li>
-                    <a href="product_page.php">Watches & Wearables</a>
+                    <a href="product_page.php">Lingerie and Sleepwear</a>
                   </li>
                 </ul>
               </li>
@@ -442,10 +521,10 @@ export class Static extends Component {
                 <a href="#">Kids</a>
                 <ul className="dk_mf2_58">
                   <li>
-                    <a href="#">Web Design</a>
+                    <a href="#">Boys Clothing</a>
                   </li>
                   <li>
-                    <a href="#">User Experience</a>
+                    <a href="#">Girls Clothing</a>
                   </li>
                 </ul>
               </li>
@@ -486,6 +565,7 @@ export class Static extends Component {
         {" "}
         &uarr;
       </a>,
+      <div>{this.renderProducts()}</div>,
       <Modal />,
       <div className="container-fluid dkf_1">
         Copyright 2018 xyz.com. All Rights Reserved.
