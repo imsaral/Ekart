@@ -1,68 +1,77 @@
-<div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 dk_mf2_153">
-  <div class="col-xs-12 dk_mf2_154">
-    <a href="product_profile.php" class="dk_mf2_155">
-      <div class="col-xs-12 dk_mf2_156">
-        <div class="dk_mf2_157">
-          <img
-            src="images/100000707037a.jpg"
-            class="dk_mf2_158 img-responsive"
-          />
-        </div>
-        <div class="dk_mf2_159">
-          <span class="dk_mf2_160">Brown Solid Casual Jacket</span>
-        </div>
-        <div class="dk_mf2_161">
-          <span class="dk_mf2_162">Pack of 2 T-shirts</span>
-        </div>
-        <div class="dk_mf2_163">
-          <span class="dk_mf2_164">Rs. 439</span>
-          <span class="dk_mf2_165">Rs. 1,099</span>
-          <span class="dk_mf2_166">(60% OFF)</span>
-        </div>
-        <div class="dk_mf2_167">
-          <span class="dk_mf2_168">Sizes : S, M, L, XL</span>
-        </div>
-      </div>
-    </a>
-  </div>
-</div>;
 import React, { Component } from "react";
 
-export class cards extends Component {
+export class Cards extends Component {
   state = {
-    data: [],
-    index: 0
+    data: []
   };
   componentDidMount() {
     var url =
-      "http://101.53.137.41/api/?cat=Apparels_Kids_Boys_SuitsandBlazers_Waistcoats&count=100&offset=0";
+      "http://101.53.137.41/api/?cat=Apparels_Men_Polos-T-Shirts&count=100&offset=0";
     fetch(url)
       .then(response => response.json())
       .then(response => {
         var key;
+        var newArray = [];
         for (key in response) {
           if (response.hasOwnProperty(key)) {
-            index = index + 1;
-            let newArray = this.state.data.slice();
             newArray.push(response[key]);
-            this.setState({ data: newArray });
           }
         }
+        this.setState({ data: newArray }, () => {
+          console.log(this.state.data);
+        });
       });
   }
-  renderPlayers = () => {
+  renderProducts = () => {
     const elements = [];
-    for (let i = 0; i < this.state.index; i++) {
-      elements.push(
-        <div key={index}>
-          <DrawButton handleClick={() => this.drawPlayerCards(index)}>
-            Draw One
-          </DrawButton>
-          <CardList list={this.state.playerCards[index] || []} />
-        </div>
-      );
+    if (this.state.data == 0) {
+      return elements;
+    } else {
+      for (let index in this.state.data) {
+        let disc =
+          ((this.state.data[index]["mrp"] -
+            this.state.data[index]["sellingPrice"]) /
+            this.state.data[index]["mrp"]) *
+          100;
+        elements.push(
+          <div className="col-lg-3 col-md-3 col-sm-4 col-xs-6 dk_mf2_153">
+            <div className="col-xs-12 dk_mf2_154">
+              <a href="product_profile.php" className="dk_mf2_155">
+                <div className="col-xs-12 dk_mf2_156">
+                  <div className="dk_mf2_157">
+                    <img
+                      src={this.state.data[index]["imageUrlStr"].split(";")[0]}
+                      className="dk_mf2_158 img-responsive"
+                    />
+                  </div>
+                  <div className="dk_mf2_159">
+                    <span className="dk_mf2_160">
+                      {this.state.data[index]["title"]}
+                    </span>
+                  </div>
+                  <div className="dk_mf2_163">
+                    <span className="dk_mf2_164">
+                      Rs. {this.state.data[index]["mrp"]}
+                    </span>
+                    <span className="dk_mf2_165">
+                      Rs. {this.state.data[index]["sellingPrice"]}
+                    </span>
+                    <span className="dk_mf2_166">({disc.toFixed(0)}% OFF)</span>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        );
+      }
+      return elements;
     }
-
-    return elements;
   };
+  render() {
+    return (
+      <div className="container-fluid dk_mf2_151">
+        <div className="container dk_mf2_152">{this.renderProducts()}</div>
+      </div>
+    );
+  }
 }

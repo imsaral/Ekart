@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Modal } from "./Modal.js";
 import { Carousel } from "./Carousel.js";
 import { Navbar } from "./Hidden_Navbar.js";
+import { Cards } from "./cards.js";
 import "./CSS/dkecs.css";
 import "./CSS/pushy.css";
 import "./CSS/style.css";
@@ -50,46 +51,6 @@ class Categories extends Component {
 }
 
 export class Static extends Component {
-  state = {
-    products: []
-  };
-  state = {
-    data: [],
-    index: 0
-  };
-  componentDidMount() {
-    var url =
-      "http://101.53.137.41/api/?cat=[[{%22nodeId%22:20001,%22nodeName%22:%22FLIPKART_TREE%22}]]&count=100&offset=0";
-    // "http://101.53.137.41/api/?cat=Apparels_Kids_Boys_SuitsandBlazers_Waistcoats&count=100&offset=0";
-    fetch(url)
-      .then(response => response.json())
-      .then(response => {
-        var key;
-        var newArray = [];
-        for (key in response) {
-          if (response.hasOwnProperty(key)) {
-            newArray.push(response[key]);
-          }
-        }
-        this.setState({ data: newArray }, () => {
-          console.log(this.state.data);
-        });
-      });
-  }
-  renderDiv = () => {
-    const elements = [];
-    if (this.state.data == 0) {
-      console.log("here");
-      return elements;
-    } else {
-      console.log(this.state.data[0]["title"]);
-      for (let index in this.state.data) {
-        elements.push(<div>{this.state.data[index]["title"]}</div>);
-      }
-      return elements;
-    }
-  };
-
   render() {
     return [
       <Navbar />,
@@ -101,7 +62,7 @@ export class Static extends Component {
         &uarr;
       </a>,
       <Modal />,
-      <div>{this.renderDiv()}</div>,
+      <Cards />,
       <div className="container-fluid dkf_1">
         Copyright 2018 xyz.com. All Rights Reserved.
       </div>
