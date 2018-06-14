@@ -53,7 +53,9 @@ class Categories extends Component {
 
 export class Static extends Component {
   state = {
-    itemsInCart: JSON.parse(localStorage.getItem("cart")).length
+    itemsInCart: JSON.parse(localStorage.getItem("cart"))
+      ? JSON.parse(localStorage.getItem("cart")).length
+      : 0
   };
 
   constructor(props) {
