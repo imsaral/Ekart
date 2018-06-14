@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { Modal } from "./Modal.js";
 import { Carousel } from "./Carousel.js";
-import { Navbar } from "./Hidden_Navbar.js";
-import { Cards } from "./cards.js";
+import { Navbar } from "./Navbar.js";
+import { Cards } from "./Cards.js";
 import "./CSS/dkecs.css";
 import "./CSS/pushy.css";
 import "./CSS/style.css";
@@ -51,9 +51,25 @@ class Categories extends Component {
 }
 
 export class Static extends Component {
+  state = {
+    itemsInCart: JSON.parse(localStorage.getItem("cart")).length
+  };
+
+  constructor(props) {
+    super(props);
+    this.handler = this.handler.bind(this);
+  }
+
+  handler(e) {
+    this.setState({
+      itemsInCart: e
+    });
+  }
+
   render() {
+    var handler = this.handler;
     return [
-      <Navbar />,
+      <Navbar items={this.state.itemsInCart} />,
       <div className="margin-div_dk" />,
       <Carousel />,
       <Categories />,
@@ -62,7 +78,7 @@ export class Static extends Component {
         &uarr;
       </a>,
       <Modal />,
-      <Cards />,
+      <Cards handler={handler.bind(this)} items={this.state.itemsInCart} />,
       <div className="container-fluid dkf_1">
         Copyright 2018 xyz.com. All Rights Reserved.
       </div>

@@ -2714,7 +2714,8 @@ dk_mf_705{
     height: 21px;
 } 
 .dk_mf2_18plus {
-    background-color:#5c5faf;
+	position: absolute;
+    background-color:#ff0072;
     width: 18px;
     height: 18px;
     line-height: 18px;
@@ -2840,6 +2841,7 @@ dk_mf_705{
 	font-size: 20px;
 }
 .dk_mf2_35plus {
+	position: absolute;
     background-color: #ff0072;
     width: 18px;
     height: 18px;
@@ -2880,7 +2882,11 @@ dk_mf_705{
     color: #FFF;
     cursor: pointer;
 }
+.dk_mf2_84{
+	color:black;
+}
 .dk_mf2_82{
+	color:black;
 	padding:0;
 	margin:0;
 	display:inline-block;
@@ -2889,17 +2895,20 @@ dk_mf_705{
 	float:right;
 }
 .dk_mf2_82 li{
+	color:black;
 	display:inline-block;
 	padding:5px 20px;
 	padding-right: 10px;
 }
 .dk_mf2_82 li a{
+	color: black;
 	cursor: pointer;
 	color:#8e8e8e;
     font-size: 12px;
     font-weight: 500;
 }
 .dk_mf2_82 li a:after {
+	color:black;
     content: "|";
 	padding-left:5px;
 }

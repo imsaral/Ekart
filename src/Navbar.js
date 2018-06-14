@@ -3,6 +3,7 @@ import "./CSS/dkecs.css";
 import "./CSS/pushy.css";
 import "./CSS/style.css";
 import "./CSS/theme.css";
+import { Cards } from "./Cards.js";
 import mens from "./images/mens.jpg";
 import womens from "./images/womens.jpg";
 import kids from "./images/kids.jpg";
@@ -13,6 +14,9 @@ import womens1 from "./images/womens1.jpg";
 import kid1 from "./images/kid1.jpg";
 
 export class Navbar extends Component {
+  constructor(props) {
+    super(props);
+  }
   closeNav() {
     document.getElementById("myNav").style.width = "0%";
   }
@@ -20,6 +24,7 @@ export class Navbar extends Component {
     document.getElementById("myNav").style.width = "40%";
   }
   render() {
+    console.log("x", this.props.items);
     return [
       <div className="container-fluid dk_mf2_21">
         <div className="dk_mf2_21_a">
@@ -102,7 +107,7 @@ export class Navbar extends Component {
           <div className="col-xs-1 dk_mf2_25">
             <a href="cart.php" className="dk_mf2_36">
               <i id="cart" className="fas fa-shopping-cart dk_mf2_35">
-                <span className="dk_mf2_35plus">2</span>
+                <span className="dk_mf2_35plus">{this.props.items}</span>
               </i>
             </a>
           </div>
@@ -149,12 +154,6 @@ export class Navbar extends Component {
               >
                 Sign Up
               </a>
-              <a href="#" className="dk_mf2_84">
-                Track Order
-              </a>
-              <a href="#" className="dk_mf2_84">
-                Contact
-              </a>
             </li>
           </ul>
         </div>
@@ -183,7 +182,7 @@ export class Navbar extends Component {
           <div className="dk_mf2_15 cart-button">
             <a href="cart.php" className="dk_mf2_16">
               <i id="cart" className="fas fa-shopping-cart fa-2x dk_mf2_17">
-                <span className="dk_mf2_18plus">2</span>
+                <span className="dk_mf2_18plus">{this.props.items}</span>
               </i>
             </a>
           </div>
@@ -243,6 +242,7 @@ export class Navbar extends Component {
           </nav>
         </div>
       </div>
+      // <Cards handler={handler.bind(this)} />
     ];
   }
 }
