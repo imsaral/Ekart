@@ -51,7 +51,9 @@ export class Cards extends Component {
     super(props);
     this.state = {
       data: [],
-      cart: []
+      cart: JSON.parse(localStorage.getItem("cart"))
+        ? JSON.parse(localStorage.getItem("cart"))
+        : []
     };
   }
   addToCart = prodId => {
@@ -105,8 +107,8 @@ export class Cards extends Component {
       var json = JSON.stringify(this.state.cart);
       localStorage.setItem("cart", json);
       // alert("Item added to cart successfully");
-      // var obj1 = JSON.parse(localStorage.getItem("cart"));
-      // console.log(obj1);
+      var obj1 = JSON.parse(localStorage.getItem("cart"));
+      console.log(obj1);
       // var handler = this.props.handler;
       var e = this.props.items + 1;
       this.props.handler(e);
