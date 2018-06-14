@@ -13,20 +13,20 @@ import womens1 from "./images/womens1.jpg";
 import kid1 from "./images/kid1.jpg";
 
 const Card = ({ prodId, title, imageUrl, mrp, sellingPrice, discount }) => (
-  <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6 dk_mf2_153">
-    <div class="col-xs-12 dk_mf2_154">
-      <a href="product_profile.php" class="dk_mf2_155">
-        <div class="col-xs-12 dk_mf2_156">
-          <div class="dk_mf2_157">
-            <img src={imageUrl} class="dk_mf2_158 img-responsive" />
+  <div className="col-lg-3 col-md-3 col-sm-4 col-xs-6 dk_mf2_153">
+    <div className="col-xs-12 dk_mf2_154">
+      <a href="product_profile.php" className="dk_mf2_155">
+        <div className="col-xs-12 dk_mf2_156">
+          <div className="dk_mf2_157">
+            <img src={imageUrl} className="dk_mf2_158 img-responsive" />
           </div>
-          <div class="dk_mf2_159">
-            <span class="dk_mf2_160">{title}</span>
+          <div className="dk_mf2_159">
+            <span className="dk_mf2_160">{title}</span>
           </div>
-          <div class="dk_mf2_163">
-            <span class="dk_mf2_164">Rs. {sellingPrice}</span>
-            <span class="dk_mf2_165">Rs. {mrp}</span>
-            <span class="dk_mf2_166">({discount.toFixed(0)}% OFF)</span>
+          <div className="dk_mf2_163">
+            <span className="dk_mf2_164">Rs. {sellingPrice}</span>
+            <span className="dk_mf2_165">Rs. {mrp}</span>
+            <span className="dk_mf2_166">({discount.toFixed(0)}% OFF)</span>
           </div>
         </div>
       </a>
@@ -87,8 +87,8 @@ export class Cards extends Component {
   };
   render() {
     return [
-      <div class="container-fluid dk_mf2_151">
-        <div class="container dk_mf2_152">{this.renderProducts()}</div>
+      <div className="container-fluid dk_mf2_151">
+        <div className="container dk_mf2_152">{this.renderProducts()}</div>
       </div>
     ];
   }

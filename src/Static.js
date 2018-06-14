@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Modal } from "./Modal.js";
 import { Carousel } from "./Carousel.js";
-import { Navbar } from "./Hidden_Navbar.js";
+import { Navbar } from "./Navbar.js";
 import { Cards } from "./Cards.js";
 import "./CSS/dkecs.css";
 import "./CSS/pushy.css";
