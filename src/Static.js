@@ -252,17 +252,6 @@ class Carousel extends Component {
 }
 
 export class Static extends Component {
-  componentDidMount() {
-    // var that = this;
-    // var url =
-    //   "http://101.53.137.41/api/?cat=Apparels_Kids_Boys_SuitsandBlazers_Waistcoats&count=100&offset=0";
-    // fetch(url)
-    //   .then(response => response.json())
-    //   .then(response => {
-    //     console.log(response);
-    //   });
-  }
-
   closeNav() {
     document.getElementById("myNav").style.width = "0%";
   }
