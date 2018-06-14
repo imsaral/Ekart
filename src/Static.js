@@ -66,15 +66,85 @@ export class Static extends Component {
         console.log(response);
       });
   }
+  closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+  }
+  openNav() {
+    document.getElementById("myNav").style.width = "40%";
+  }
   render() {
     return [
       <div className="container-fluid dk_mf2_21">
         <div className="dk_mf2_21_a">
           <div className="col-xs-1 dk_m2f_22">
-            <img
-              src={menu}
-              className="dk_mf2_31 side-left-pushy-button menu-btn"
-            />
+            <span onClick={this.openNav} id="myNavButton">
+              &#9776;
+            </span>
+            <div id="myNav" class="overlay">
+              <a
+                href="javascript:void(0)"
+                class="btnclose2"
+                onClick={this.closeNav}
+              >
+                &times;
+              </a>
+              <div class="overlay-content">
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">Clients</a>
+                <a href="#">Contact</a>
+              </div>
+            </div>
+
+            {/* <nav className="navbar navbar-light bg-light">
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarTogglerDemo01"
+              aria-controls="navbarTogglerDemo01"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span className="navbar-toggler-icon" />
+            </button>
+            <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
+              <a className="navbar-brand" href="#">
+                Hidden brand
+              </a>
+              <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li className="nav-item active">
+                  <a className="nav-link" href="#">
+                    Home <span className="sr-only">(current)</span>
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link" href="#">
+                    Link
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link disabled" href="#">
+                    Disabled
+                  </a>
+                </li>
+              </ul>
+              <form className="form-inline my-2 my-lg-0">
+                <input
+                  className="form-control mr-sm-2"
+                  type="search"
+                  placeholder="Search"
+                  aria-label="Search"
+                />
+                <button
+                  className="btn btn-outline-success my-2 my-sm-0"
+                  type="submit"
+                >
+                  Search
+                </button>
+              </form>
+            </div>
+          </nav> */}
           </div>
           <div className="col-xs-9 dk_mf2_23">
             <img src={image} className="dk_mf2_32" />
@@ -110,38 +180,6 @@ export class Static extends Component {
             />
           </div>
         </div>
-        <nav id="sideLeftPushy" className="pushy pushy-left">
-          <div className="dk_mf2_1055">Home</div>
-          <ul className="dk_mf2_1051">
-            <li className="dk_mf2_1052">
-              <a
-                href="#"
-                className="dk_mf2_1053 my-btn"
-                data-modal="myModal1cate123"
-              >
-                Mens Fashion
-              </a>
-            </li>
-            <li className="dk_mf2_1052">
-              <a
-                href="#"
-                className="dk_mf2_1053 my-btn"
-                data-modal="myModal1cate123"
-              >
-                Women's Fashion
-              </a>
-            </li>
-            <li className="dk_mf2_1052">
-              <a
-                href="#"
-                className="dk_mf2_1053 my-btn"
-                data-modal="myModal1cate123"
-              >
-                Kids Fashion
-              </a>
-            </li>
-          </ul>
-        </nav>
       </div>,
       <div className="container-fluid dk_mf2_1">
         <div className="dk_mf2_81">
@@ -267,23 +305,23 @@ export class Static extends Component {
       <div className="container-fluid dk_mf2_101">
         <div className="container dk_mf2_102">
           <div className="col-xs-12 dk_mf2_103">
-            <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12 dk_mf2_104">
+            <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12 dk_mf2_104">
               <a href="product_page.php">
-                <div className="col-xs-12 dk_mf2_105">
+                <div className="col-sm-12 col-xs-12 dk_mf2_105">
                   <img src={mens1} className="dk_mf2_106" />
                 </div>
               </a>
             </div>
-            <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12 dk_mf2_104">
+            <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12 dk_mf2_104">
               <a href="product_page.php">
-                <div className="col-xs-12 dk_mf2_105">
+                <div className="col-sm-12 col-xs-12 dk_mf2_105">
                   <img src={womens1} className="dk_mf2_106" />
                 </div>
               </a>
             </div>
-            <div className="col-lg-4 col-md-4 col-sm-4 col-xs-12 dk_mf2_104">
+            <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12 dk_mf2_104">
               <a href="product_page.php">
-                <div className="col-xs-12 dk_mf2_105">
+                <div className=" col-sm-12 col-xs-12 dk_mf2_105">
                   <img src={kid1} className="dk_mf2_106" />
                 </div>
               </a>
@@ -295,6 +333,7 @@ export class Static extends Component {
         {" "}
         &uarr;
       </a>,
+
       <div className="container-fluid dkf_1">
         Copyright 2018 xyz.com. All Rights Reserved.
       </div>
