@@ -250,28 +250,51 @@ export class Cards extends Component {
 }
 
 export class Product extends Component {
+  addToCarts = () => {
+    var prodId = window.productID.prodId;
+    var title = window.title.title;
+    var image = window.imageUrl.imageUrl;
+    var mrp = window.mrp.mrp;
+    var sellingPrice = window.sellingPrice.sellingPrice;
+    var discount = window.discount.discount;
+    var description = window.description.description;
+    var productUrl = window.productUrl.productUrl;
+    var productBrand = window.productBrand.productBrand;
+    var sellerName = window.sellerName.sellerName;
+    var sellerRating = window.sellerAverageRating.sellerAverageRating;
+    var obj = {
+      description: description,
+      imageUrlStr: image,
+      mrp: mrp,
+      productBrand: productBrand,
+      productId: prodId,
+      productUrl: productUrl,
+      sellerAverageRating: sellerRating,
+      sellerName: sellerName,
+      sellingPrice: sellingPrice,
+      title: title
+    };
+    var newArray = JSON.parse(localStorage.getItem("cart"));
+    newArray.push(obj);
+    var json = JSON.stringify(newArray);
+    localStorage.setItem("cart", json);
+    var x = this.state.count + 1;
+    this.setState({
+      count: x
+    });
+  };
+
+  state = {
+    count: localStorage.getItem("cart")
+      ? JSON.parse(localStorage.getItem("cart")).length
+      : 0
+  };
   render() {
     if (window.productID == undefined) {
       return <h3>kucho</h3>;
     } else {
-      // var imageSrc = this.state.data[i]["imageUrlStr"].split(";")[1];
-      // return (
-      //   <h1>
-      //     Product Reached {window.productID.prodId}
-      //     {window.title.title}
-      //     {window.imageUrl.imageUrl}
-      //     {window.mrp.mrp}
-      //     {window.sellingPrice.sellingPrice}
-      //     {window.discount.discount}
-      //     {window.productUrl.productUrl}
-      //     {window.productBrand.productBrand}
-      //     {window.sellerName.sellerName}
-      //     {window.sellerAverageRating.sellerAverageRating}
-      //     {window.description.description}
-      //   </h1>
-      // );
       return [
-        // <Navbar />,
+        <Navbar items={this.state.count} />,
         <div id="product-div">
           <div id="product-image">
             <img
@@ -304,7 +327,17 @@ export class Product extends Component {
             <p>{window.description.description}</p>
             <a href={window.productUrl.productUrl} className="btn btn-success">
               View On Flipkart
-            </a>
+            </a>&nbsp;&nbsp;&nbsp;
+            <button
+              id={window.productId}
+              onClick={() => {
+                this.addToCarts();
+              }}
+              type="button"
+              className="btn btn-outline-danger"
+            >
+              ADD TO <i id="btncart" className="fas fa-shopping-cart" />
+            </button>
           </div>
         </div>
       ];
