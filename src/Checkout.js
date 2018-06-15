@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./CSS/style.css";
-import { Link } from "react-router";
+import { Link, browserHistory } from "react-router";
 
 export class Checkout extends Component {
   storeBillingInfo = () => {
@@ -29,19 +29,35 @@ export class Checkout extends Component {
     console.log(arr);
     var json = JSON.stringify(arr);
     localStorage.setItem("billing", json);
-    document.getElementById("billForm").reset();
+    if (
+      fname == 0 ||
+      lname == 0 ||
+      uname == 0 ||
+      address == 0 ||
+      country == 0 ||
+      state == 0 ||
+      zip == 0
+    ) {
+    } else {
+      browserHistory.push("payment");
+    }
+    // document.getElementById("billForm").reset();
   };
 
   render() {
     return [
-      <div className="container">
+      <div className="container" style={{ marginLeft: 20, marginTop: 40 }}>
+        <Link className="btn btn-primary" to="cart">
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Go
+          Back&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        </Link>
         <div className="py-5 text-left">
           <h2>Checkout form</h2>
         </div>
         <div className="row">
           <div className="col-md-8 order-md-1">
             <h4 className="mb-3">Billing address</h4>
-            <form className="needs-validation" id="billForm" noValidate>
+            <form className="needs-validation" id="billForm" novalidate>
               <div className="row">
                 <div className="col-md-6 mb-3">
                   <label for="firstName">First name</label>
@@ -166,16 +182,16 @@ export class Checkout extends Component {
                   <div className="invalid-feedback">Zip code required.</div>
                 </div>
               </div>
+              <div className="mb-4">
+                <button
+                  // to="payment"
+                  className="btn btn-primary btn-lg btn-block"
+                  onClick={this.storeBillingInfo}
+                >
+                  Place Order
+                </button>
+              </div>
             </form>
-            <div className="mb-4">
-              <Link
-                to="payment"
-                className="btn btn-primary btn-lg btn-block"
-                onClick={this.storeBillingInfo}
-              >
-                Place Order
-              </Link>
-            </div>
           </div>
         </div>
       </div>

@@ -17,7 +17,7 @@ const Product = ({
   <tr>
     <td className="link">
       <Link to="cart" onClick={Remove}>
-        Remove
+        <i class="fas fa-times-circle rembtn" />
       </Link>
     </td>
     <td className="product">
@@ -33,7 +33,9 @@ const Product = ({
       </div>
     </td>
     <td className="price">
-      <span id="mrp">Rs. {mrp}</span>&nbsp;&nbsp; Rs. {sellingPrice}
+      <span id="mrp" style={{ color: "grey" }}>
+        Rs. {mrp}
+      </span>&nbsp;&nbsp; Rs. {sellingPrice}
       <br />
       <span className="disc">{discount}% OFF</span>
     </td>
@@ -99,40 +101,67 @@ export class Cart extends Component {
     if (o != null) {
       var obj = JSON.parse(o);
       if (obj.length == 0) {
+        console.log("here");
         alert("Cart empty!");
-        browserHistory.push("/");
-        // document.getElementById("checkout1").setAttribute("to", "/");
-        // console.log(document.getElementById("checkout1"));
+        browserHistory.push("cart");
       } else {
-        document.getElementById("checkout1").setAttribute("to", "checkout");
+        browserHistory.push("checkout");
       }
     } else {
-      document.getElementById("checkout1").setAttribute("to", "checkout");
+      alert("Cart empty!");
+      browserHistory.push("cart");
     }
   };
 
   render() {
     return [
-      <h1>Shopping Cart</h1>,
-      <Link to="/" className="continue-shopping">
+      <p id="cart-heading">
+        <b>SHOPPING CART</b>
+      </p>,
+      <Link to="/" className="continue-shopping btn btn-primary">
         Continue Shopping
       </Link>,
-      <Link
-        to="checkout"
-        id="checkout1"
+      <button
+        // to="checkout"
+        // id="checkout1"
         onClick={() => this.checkCart()}
-        className="checkout-button"
+        className="checkout-button btn btn-primary"
       >
         Checkout
-      </Link>,
+      </button>,
       <table cellspacing="0" className="shopping-cart">
         <thead>
           <tr className="headings">
-            <th className="link">&nbsp;</th>
-            <th className="product">Item</th>
-            <th className="price">Price</th>
-            <th className="quantity">Quantity</th>
-            <th className="price">Total</th>
+            <th
+              className="shopping-cart-head link"
+              style={{ backgroundColor: "black", color: "white" }}
+            >
+              &nbsp;
+            </th>
+            <th
+              className="shopping-cart-head product"
+              style={{ backgroundColor: "black", color: "white" }}
+            >
+              Item
+            </th>
+            <th
+              className="shopping-cart-head price"
+              style={{ backgroundColor: "black", color: "white" }}
+            >
+              Price
+            </th>
+            <th
+              className="shopping-cart-head quantity"
+              style={{ backgroundColor: "black", color: "white" }}
+            >
+              Quantity
+            </th>
+            <th
+              className="shopping-cart-head price"
+              style={{ backgroundColor: "black", color: "white" }}
+            >
+              Total
+            </th>
           </tr>
         </thead>
         <tbody>{this.renderProductsInCart()}</tbody>

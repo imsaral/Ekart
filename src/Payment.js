@@ -10,8 +10,8 @@ export class Payment extends Component {
     for (let index in obj) {
       elements.push(
         <div>
-          <span>{obj[index]["title"]}-</span>&nbsp;
-          <span>{obj[index]["sellingPrice"]}</span>
+          <span className="order-title">{obj[index]["title"]}-</span>&nbsp;&nbsp;&nbsp;&nbsp;
+          <span className="order-price">Rs. {obj[index]["sellingPrice"]}</span>
           <br />
         </div>
       );
@@ -25,24 +25,44 @@ export class Payment extends Component {
     var elements = [];
     for (let index in obj) {
       elements.push(
-        <div>
-          <span>Address: {obj[index]["Address"]}</span>
+        <div id="bill-head">
+          <span>Address:</span>
           <br />
-          <span>Address2: {obj[index]["Address 2"]}</span>
+          <span>Address2:</span>
           <br />
-          <span>Country: {obj[index]["Country"]}</span>
+          <span>Country:</span>
           <br />
-          <span>Email: {obj[index]["Email"]}</span>
+          <span>Email:</span>
           <br />
-          <span>First Name: {obj[index]["First Name"]}</span>
+          <span>First Name:</span>
           <br />
-          <span>Last Name: {obj[index]["Last Name"]}</span>
+          <span>Last Name:</span>
           <br />
-          <span>State: {obj[index]["State"]}</span>
+          <span>State:</span>
           <br />
-          <span>Username: {obj[index]["Username"]}</span>
+          <span>Username:</span>
           <br />
-          <span>Zip: {obj[index]["Zip"]}</span>
+          <span>Zip:</span>
+          <br />
+        </div>,
+        <div id="bill-value">
+          <span>{obj[index]["Address"]}</span>
+          <br />
+          <span>{obj[index]["Address 2"]}</span>
+          <br />
+          <span>{obj[index]["Country"]}</span>
+          <br />
+          <span>{obj[index]["Email"]}</span>
+          <br />
+          <span>{obj[index]["First Name"]}</span>
+          <br />
+          <span>{obj[index]["Last Name"]}</span>
+          <br />
+          <span>{obj[index]["State"]}</span>
+          <br />
+          <span>{obj[index]["Username"]}</span>
+          <br />
+          <span>{obj[index]["Zip"]}</span>
           <br />
         </div>
       );
@@ -53,16 +73,39 @@ export class Payment extends Component {
   render() {
     return [
       <div>
+        <br />
+        <center>
+          <span id="payment-head">
+            &nbsp;&nbsp;Your Order has been placed successfully !!&nbsp;&nbsp;
+          </span>
+        </center>
+      </div>,
+      <br />,
+      <div>
         <div>
-          Cart Details-
+          <div className="payment-sub-head">
+            <b>
+              <u>Order Details </u>&nbsp;-
+            </b>
+          </div>
           {this.displayCart()}
         </div>
         <br />
         <div>
-          Billing Details-
+          <div className="payment-sub-head">
+            <b>
+              <u>Delivery Details </u>&nbsp;-
+            </b>
+          </div>
           {this.displayBill()}
         </div>
-        <Link to="/">Make a New Order</Link>
+        <br />
+        <br />
+        <center>
+          <Link to="/" className="btn btn-outline-dark">
+            Make a New Order
+          </Link>
+        </center>
       </div>
     ];
   }

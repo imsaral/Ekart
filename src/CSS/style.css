@@ -121,6 +121,34 @@
   transition: opacity 0.2s ease-out;
   opacity: 1;
 }
+#payment-head {
+  background-color: lightgreen;
+  color: green;
+  font-size: 150%;
+  font-family: fantasy;
+}
+.payment-sub-head {
+  margin-left: 50px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 120%;
+  color: blueviolet;
+  margin-bottom: 20px;
+}
+.order-title {
+  margin-left: 80px;
+  color: darkblue;
+}
+.order-price {
+  font-size: 150%;
+  color: tomato;
+}
+#bill-head {
+  margin-left: 80px;
+  width: 30%;
+  float: left;
+  color: black;
+  font-weight: bold;
+}
 #cart {
   color: black;
 }
@@ -134,7 +162,7 @@
 }
 
 .shopping-cart {
-  width: 100%;
+  width: 90%;
   border-top: 1px solid #c3c3c3;
   border-right: 1px solid #c3c3c3;
   clear: both;
@@ -199,14 +227,34 @@
   margin: 20px 0 0;
   text-align: right;
 }
+.rembtn {
+  font-size: 150%;
+  padding: 10px;
+  color: red;
+}
 .continue-shopping {
+  width: 20%;
   float: left;
   margin: 20px 0;
+  margin-left: 40px;
+  margin-bottom: 50px;
 }
 .checkout-button {
+  width: 20%;
   float: right;
   margin: 20px 0;
-  font-weight: bold;
+  margin-right: 40px;
+  margin-bottom: 50px;
+}
+.shopping-cart {
+  margin: 60px;
+}
+
+#cart-heading {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 300%;
+  font-family: cursive;
 }
 #mrp {
   text-decoration: line-through;
