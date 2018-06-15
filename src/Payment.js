@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import "./CSS/style.css";
 import { Link } from "react-router";
+
+import "./CSS/style.css";
 
 export class Payment extends Component {
   displayCart = () => {

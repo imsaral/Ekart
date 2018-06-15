@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./CSS/style.css";
-import { Link } from "react-router";
+import { Link, browserHistory } from "react-router";
 
 const Product = ({
   description,
@@ -49,10 +49,10 @@ export class Cart extends Component {
     for (var i = 0; i < items.length; i++) {
       if (items[i]["productId"] == prodId) {
         items.splice(i, 1);
+        break;
       }
     }
     var item = JSON.stringify(items);
-    // console.log(item);
     localStorage.setItem("cart", item);
   };
   renderProductsInCart = () => {
@@ -100,15 +100,15 @@ export class Cart extends Component {
       var obj = JSON.parse(o);
       if (obj.length == 0) {
         alert("Cart empty!");
-        document.getElementById("checkout1").setAttribute("to", "/");
+        browserHistory.push("/");
+        // document.getElementById("checkout1").setAttribute("to", "/");
         // console.log(document.getElementById("checkout1"));
       } else {
         document.getElementById("checkout1").setAttribute("to", "checkout");
       }
+    } else {
+      document.getElementById("checkout1").setAttribute("to", "checkout");
     }
-    // } else {
-    //   document.getElementById("checkout1").setAttribute("to", "checkout");
-    // }
   };
 
   render() {

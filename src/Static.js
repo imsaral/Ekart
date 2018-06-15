@@ -6,7 +6,6 @@ import { Navbar } from "./Navbar.js";
 import { Cards } from "./Cards.js";
 import { Crumbs } from "./Crumbs.js";
 import "./CSS/dkecs.css";
-import "./CSS/pushy.css";
 import "./CSS/style.css";
 import "./CSS/theme.css";
 import mens from "./images/mens.jpg";

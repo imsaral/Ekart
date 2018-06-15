@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Router, Route, browserHistory } from "react-router";
 import App from "./App";
 import { Cart } from "./Cart.js";
-import { Product } from "./Cards.js";
-import { Router, Route, browserHistory } from "react-router";
 import { Checkout } from "./Checkout.js";
 import { Payment } from "./Payment.js";
+import { Product } from "./Cards.js";
 
 ReactDOM.render(
   <Router history={browserHistory}>

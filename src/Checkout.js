@@ -41,7 +41,7 @@ export class Checkout extends Component {
         <div className="row">
           <div className="col-md-8 order-md-1">
             <h4 className="mb-3">Billing address</h4>
-            <form className="needs-validation" id="billForm" novalidate>
+            <form className="needs-validation" id="billForm" noValidate>
               <div className="row">
                 <div className="col-md-6 mb-3">
                   <label for="firstName">First name</label>

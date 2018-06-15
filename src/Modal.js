@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./CSS/dkecs.css";
-import "./CSS/pushy.css";
 import "./CSS/style.css";
 import "./CSS/theme.css";
 import mens from "./images/mens.jpg";

@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router";
 import "./CSS/dkecs.css";
-import "./CSS/pushy.css";
 import "./CSS/style.css";
 import "./CSS/theme.css";
 
