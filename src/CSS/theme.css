@@ -2785,6 +2785,7 @@ dk_mf_705{
     z-index:999999 !important;
 }
 .dk_mf2_58 li a{
+	text-align: left;
     font-size:14px;
     font-weight:500;
 }

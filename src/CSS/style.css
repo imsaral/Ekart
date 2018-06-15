@@ -13,14 +13,14 @@
 
 .overlay-content {
   position: relative;
-  top: 25%;
+  top: 5%;
   width: 100%;
   text-align: center;
-  margin-top: 30px;
+  /* margin-top: 30px; */
 }
 
 .overlay a {
-  padding: 8px;
+  padding: 4px;
   text-decoration: none;
   font-size: 36px;
   color: #818181;
@@ -30,13 +30,13 @@
 
 .overlay a:hover,
 .overlay a:focus {
-  color: #f1f1f1;
+  color: black;
 }
 
 .overlay .btnclose2 {
   position: absolute;
-  top: 20px;
-  right: 45px;
+  top: 0px;
+  right: 25px;
   font-size: 60px;
 }
 
@@ -49,6 +49,12 @@
     top: 15px;
     right: 35px;
   }
+}
+
+#innerMyNav {
+  padding-bottom: 6%;
+  height: auto;
+  background-color: white;
 }
 
 .d-block {
@@ -83,4 +89,99 @@
 #myNavButton {
   font-size: 30px;
   cursor: pointer;
+}
+
+.shopping-cart {
+  width: 100%;
+  border-top: 1px solid #c3c3c3;
+  border-right: 1px solid #c3c3c3;
+  clear: both;
+}
+.shopping-cart th {
+  background: #f0f0f0;
+}
+.shopping-cart th,
+.shopping-cart td {
+  border-bottom: 1px solid #c3c3c3;
+  border-left: 1px solid #c3c3c3;
+  padding: 3px;
+}
+.shopping-cart .link {
+  font-size: 90%;
+  white-space: nowrap;
+}
+.shopping-cart .product {
+  width: 55%;
+}
+.shopping-cart .price {
+  width: 5%;
+}
+.shopping-cart .quantity {
+  width: 15%;
+}
+.shopping-cart .quantity input {
+  width: 30px;
+}
+.shopping-cart .price {
+  width: 20%;
+}
+.shopping-cart .product-img {
+  border: 1px solid #ccc;
+  background-color: #e9e9e9;
+  padding: 3px;
+  width: 8x;
+  height: 80px;
+  float: left;
+}
+.shopping-cart .product-img img {
+  /* max-width: 80px;
+  max-height: 80px;
+  width: auto;
+  height: auto; */
+  width: 85px;
+  height: 75px;
+}
+.shopping-cart .product-name {
+  margin-left: 100px;
+}
+.shopping-cart tr.totals {
+  font-weight: bold;
+}
+.shopping-cart tr.totals a {
+  font-weight: normal;
+}
+.shopping-cart .quantity-span {
+  text-align: right;
+}
+.coupon {
+  margin: 20px 0 0;
+  text-align: right;
+}
+.continue-shopping {
+  float: left;
+  margin: 20px 0;
+}
+.checkout-button {
+  float: right;
+  margin: 20px 0;
+  font-weight: bold;
+}
+#mrp {
+  text-decoration: line-through;
+}
+
+.disc {
+  color: red;
+  font-size: 12px;
+}
+
+.headings {
+  text-align: center;
+}
+
+.dummy {
+  height: 100px;
+}
+.invalid-feedback {
+  width: 100%;
 }

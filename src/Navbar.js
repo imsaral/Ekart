@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router";
 import "./CSS/dkecs.css";
 import "./CSS/pushy.css";
 import "./CSS/style.css";
@@ -19,9 +20,11 @@ export class Navbar extends Component {
   }
   closeNav() {
     document.getElementById("myNav").style.width = "0%";
+    document.getElementById("innerMyNav").style.width = "0%";
   }
   openNav() {
-    document.getElementById("myNav").style.width = "40%";
+    document.getElementById("myNav").style.width = "100%";
+    document.getElementById("innerMyNav").style.width = "45%";
   }
   render() {
     console.log("x", this.props.items);
@@ -33,56 +36,58 @@ export class Navbar extends Component {
               &#9776;
             </span>
             <div id="myNav" className="overlay">
-              <a
-                href="javascript:void(0)"
-                className="btnclose2"
-                onClick={this.closeNav}
-              >
-                &times;
-              </a>
-              <div className="overlay-content">
-                <a href="#">Men</a>
-                <ul className="dk_mf2_58">
-                  <li>
-                    <a href="product_page.php">Top Wear</a>
-                  </li>
-                  <li>
-                    <a href="product_page.php">Bottom Wear</a>
-                  </li>
-                  <li>
-                    <a href="product_page.php">Indian and Festive Wear</a>
-                  </li>
-                  <li>
-                    <a href="product_page.php">Suits and Blazers</a>
-                  </li>
-                  <li>
-                    <a href="product_page.php">Inner Wear and Sleepwear</a>
-                  </li>
-                </ul>
-                <a href="#">Women</a>
-                <ul className="dk_mf2_58">
-                  <li>
-                    <a href="product_page.php">Weatern Wear</a>
-                  </li>
-                  <li>
-                    <a href="product_page.php">Indian and Fusion Wear</a>
-                  </li>
-                  <li>
-                    <a href="product_page.php">Sports and Active Wear</a>
-                  </li>
-                  <li>
-                    <a href="product_page.php">Lingerie and Sleepwear</a>
-                  </li>
-                </ul>
-                <a href="#">Kids</a>
-                <ul className="dk_mf2_58">
-                  <li>
-                    <a href="#">Boys Clothing</a>
-                  </li>
-                  <li>
-                    <a href="#">Girls Clothing</a>
-                  </li>
-                </ul>
+              <div id="innerMyNav">
+                <a
+                  href="javascript:void(0)"
+                  className="btnclose2"
+                  onClick={this.closeNav}
+                >
+                  &times;
+                </a>
+                <div className="overlay-content">
+                  <Link to="men">Men</Link>
+                  <ul className="dk_mf2_58">
+                    <li>
+                      <Link to="men_topwear">Top Wear</Link>
+                    </li>
+                    <li>
+                      <Link to="men_bottomwear">Bottom Wear</Link>
+                    </li>
+                    <li>
+                      <Link to="men_ethnicwear">Indian and Festive Wear</Link>
+                    </li>
+                    <li>
+                      <Link to="men_jackets">Jackets</Link>
+                    </li>
+                    <li>
+                      <Link to="men_innerwear">Inner Wear</Link>
+                    </li>
+                  </ul>
+                  <Link to="women">Women</Link>
+                  <ul className="dk_mf2_58">
+                    <li>
+                      <Link to="women_westernwear">Western Wear</Link>
+                    </li>
+                    <li>
+                      <Link to="women_indianwear">Indian and Fusion Wear</Link>
+                    </li>
+                    <li>
+                      <Link to="women_activewear">Sports and Active Wear</Link>
+                    </li>
+                    <li>
+                      <Link to="women_sleepwear">Sleepwear</Link>
+                    </li>
+                  </ul>
+                  <Link to="kids">Kids</Link>
+                  <ul className="dk_mf2_58">
+                    <li>
+                      <Link to="kids_boys">Boys Clothing</Link>
+                    </li>
+                    <li>
+                      <Link to="kids_girls">Girls Clothing</Link>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -105,11 +110,13 @@ export class Navbar extends Component {
             </a>
           </div>
           <div className="col-xs-1 dk_mf2_25">
-            <a href="cart.php" className="dk_mf2_36">
+            <Link to="cart" className="dk_mf2_36">
+              {/* <a href="cart.php" className="dk_mf2_36"> */}
               <i id="cart" className="fas fa-shopping-cart dk_mf2_35">
                 <span className="dk_mf2_35plus">{this.props.items}</span>
               </i>
-            </a>
+              {/* </a> */}
+            </Link>
           </div>
         </div>
         <div className="dk_mf2_21_a">
@@ -180,61 +187,63 @@ export class Navbar extends Component {
             </div>
           </div>
           <div className="dk_mf2_15 cart-button">
-            <a href="cart.php" className="dk_mf2_16">
+            <Link to="cart" className="dk_mf2_16">
+              {/* <a href="cart.php" className="dk_mf2_16"> */}
               <i id="cart" className="fas fa-shopping-cart fa-2x dk_mf2_17">
                 <span className="dk_mf2_18plus">{this.props.items}</span>
               </i>
-            </a>
+              {/* </a> */}
+            </Link>
           </div>
         </div>
         <div className="dk_mf2_51">
           <nav className="dk_mf2_55">
             <ul className="dk_mf2_56">
               <li>
-                <a href="#">Men</a>
+                <Link to="men">Men</Link>
                 <ul className="dk_mf2_58">
                   <li>
-                    <a href="product_page.php">Top Wear</a>
+                    <Link to="men_topwear">Top Wear</Link>
                   </li>
                   <li>
-                    <a href="product_page.php">Bottom Wear</a>
+                    <Link to="men_bottomwear">Bottom Wear</Link>
                   </li>
                   <li>
-                    <a href="product_page.php">Indian and Festive Wear</a>
+                    <Link to="men_ethnicwear">Indian and Festive Wear</Link>
                   </li>
                   <li>
-                    <a href="product_page.php">Suits and Blazers</a>
+                    <Link to="men_jackets">Jackets</Link>
                   </li>
                   <li>
-                    <a href="product_page.php">Inner Wear and Sleepwear</a>
+                    <Link to="men_innerwear">Inner Wear</Link>
                   </li>
                 </ul>
               </li>
               <li>
-                <a href="#">Women</a>
+                <Link to="women">Women</Link>
                 <ul className="dk_mf2_58">
                   <li>
-                    <a href="product_page.php">Weatern Wear</a>
+                    <Link to="women_westernwear">Western Wear</Link>
                   </li>
                   <li>
-                    <a href="product_page.php">Indian and Fusion Wear</a>
+                    <Link to="women_indianwear">Indian and Fusion Wear</Link>
                   </li>
                   <li>
-                    <a href="product_page.php">Sports and Active Wear</a>
+                    <Link to="women_activewear">Sports and Active Wear</Link>
                   </li>
                   <li>
-                    <a href="product_page.php">Lingerie and Sleepwear</a>
+                    <Link to="women_sleepwear">Sleepwear</Link>
                   </li>
                 </ul>
               </li>
               <li>
-                <a href="#">Kids</a>
+                <Link to="kids">Kids</Link>
                 <ul className="dk_mf2_58">
                   <li>
-                    <a href="#">Boys Clothing</a>
+                    <Link to="kids_boys">Boys Clothing</Link>
                   </li>
                   <li>
-                    <a href="#">Girls Clothing</a>
+                    <Link to="kids_girls">Girls Clothing</Link>
                   </li>
                 </ul>
               </li>

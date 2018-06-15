@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router";
 import { Modal } from "./Modal.js";
 import { Carousel } from "./Carousel.js";
 import { Navbar } from "./Navbar.js";
@@ -23,25 +24,25 @@ class Categories extends Component {
         <div className="container dk_mf2_102">
           <div className="col-xs-12 dk_mf2_103">
             <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12 dk_mf2_104">
-              <a href="product_page.php">
+              <Link to="men">
                 <div className="col-sm-12 col-xs-12 dk_mf2_105">
                   <img src={mens1} className="dk_mf2_106" />
                 </div>
-              </a>
+              </Link>
             </div>
             <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12 dk_mf2_104">
-              <a href="product_page.php">
+              <Link to="women">
                 <div className="col-sm-12 col-xs-12 dk_mf2_105">
                   <img src={womens1} className="dk_mf2_106" />
                 </div>
-              </a>
+              </Link>
             </div>
             <div className="col-lg-4 col-md-4 col-sm-12 col-xs-12 dk_mf2_104">
-              <a href="product_page.php">
+              <Link to="kids">
                 <div className=" col-sm-12 col-xs-12 dk_mf2_105">
                   <img src={kid1} className="dk_mf2_106" />
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -52,7 +53,7 @@ class Categories extends Component {
 
 export class Static extends Component {
   state = {
-    itemsInCart: JSON.parse(localStorage.getItem("cart"))
+    itemsInCart: localStorage.getItem("cart")
       ? JSON.parse(localStorage.getItem("cart")).length
       : 0
   };
@@ -69,21 +70,50 @@ export class Static extends Component {
   }
 
   render() {
+    // this.forceUpdate();
+    // console.log("sjb", this.props.url);
     var handler = this.handler;
-    return [
-      <Navbar items={this.state.itemsInCart} />,
-      <div className="margin-div_dk" />,
-      <Carousel />,
-      <Categories />,
-      <a href="#" id="back-top" title="Back to top">
-        {" "}
-        &uarr;
-      </a>,
-      <Modal />,
-      <Cards handler={handler.bind(this)} items={this.state.itemsInCart} />,
-      <div className="container-fluid dkf_1">
-        Copyright 2018 xyz.com. All Rights Reserved.
-      </div>
-    ];
+    if (
+      this.props.url ===
+      "http://101.53.137.41/api/?cat=Apparels_Men_Polos-T-Shirts&count=100&offset=0"
+    ) {
+      return [
+        <Navbar items={this.state.itemsInCart} />,
+        <div className="margin-div_dk" />,
+        <Carousel />,
+        <Categories />,
+        <a href="#" id="back-top" title="Back to top">
+          {" "}
+          &uarr;
+        </a>,
+        <Modal />,
+        <Cards
+          url={this.props.url}
+          handler={handler.bind(this)}
+          items={this.state.itemsInCart}
+        />,
+        <div className="container-fluid dkf_1">
+          Copyright 2018 xyz.com. All Rights Reserved.
+        </div>
+      ];
+    } else {
+      return [
+        <Navbar items={this.state.itemsInCart} />,
+        <div className="margin-div_dk" />,
+        <a href="#" id="back-top" title="Back to top">
+          {" "}
+          &uarr;
+        </a>,
+        <Modal />,
+        <Cards
+          url={this.props.url}
+          handler={handler.bind(this)}
+          items={this.state.itemsInCart}
+        />,
+        <div className="container-fluid dkf_1">
+          Copyright 2018 xyz.com. All Rights Reserved.
+        </div>
+      ];
+    }
   }
 }
