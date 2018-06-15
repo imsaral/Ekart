@@ -4,6 +4,8 @@ import App from "./App";
 import { Cart } from "./Cart.js";
 import { Product } from "./Cards.js";
 import { Router, Route, browserHistory } from "react-router";
+import { Checkout } from "./Checkout.js";
+import { Payment } from "./Payment.js";
 
 ReactDOM.render(
   <Router history={browserHistory}>
@@ -14,6 +16,8 @@ ReactDOM.render(
       crumb="not used"
     />
     <Route path="/cart" component={Cart} />
+    <Route path="/checkout" component={Checkout} />
+    <Route path="/payment" component={Payment} />
     <Route
       path="/men"
       component={App}

@@ -114,7 +114,7 @@ export class Cards extends Component {
     super(props);
     this.state = {
       data: [],
-      cart: JSON.parse(localStorage.getItem("cart"))
+      cart: localStorage.getItem("cart")
         ? JSON.parse(localStorage.getItem("cart"))
         : []
     };
