@@ -5,6 +5,7 @@ import { Carousel } from "./Carousel.js";
 import { Navbar } from "./Navbar.js";
 import { Cards } from "./Cards.js";
 import { Crumbs } from "./Crumbs.js";
+import { Footer } from "./Footer.js";
 import "./CSS/dkecs.css";
 import "./CSS/style.css";
 import "./CSS/theme.css";
@@ -92,9 +93,7 @@ export class Static extends Component {
           handler={handler.bind(this)}
           items={this.state.itemsInCart}
         />,
-        <div className="container-fluid dkf_1">
-          Copyright 2018 ajfashions.com . All Rights Reserved.
-        </div>
+        <Footer />
       ];
     } else {
       return [
@@ -111,9 +110,7 @@ export class Static extends Component {
           handler={handler.bind(this)}
           items={this.state.itemsInCart}
         />,
-        <div className="container-fluid dkf_1">
-          Copyright 2018 ajfashions.com . All Rights Reserved.
-        </div>
+        <Footer />
       ];
     }
   }

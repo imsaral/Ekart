@@ -75,47 +75,54 @@ export class Modal extends Component {
             </div>
             <form id="dusra">
               <div className="modal-body">
-                <label>
-                  <b>Name </b>
-                </label>&emsp;
-                <input
-                  type="text"
-                  id="name1"
-                  placeholder="Enter your Name"
-                  required
-                />
-                <br />
-                <label>
-                  <b>Age </b>
-                </label>&emsp;
-                <input
-                  type="number"
-                  id="age1"
-                  placeholder="Enter your Age"
-                  required
-                />
-                <br />
-                <label>
-                  <b>Username </b>
-                </label>&emsp;
-                <input
-                  type="text"
-                  id="uname1"
-                  placeholder="Enter Username"
-                  required
-                />
-                <br />
-                <label>
-                  <b>Password </b>
-                </label>&emsp;
-                <input
-                  type="password"
-                  id="psw1"
-                  placeholder="Enter Password"
-                  required
-                />
+                <div class="modal-head">
+                  <label>
+                    <b>Name </b>
+                  </label>&emsp;
+                  <br />
+                  <label>
+                    <b>Age </b>
+                  </label>&emsp;
+                  <br />
+                  <label>
+                    <b>Username </b>
+                  </label>&emsp;
+                  <br />
+                  <label>
+                    <b>Password </b>
+                  </label>&emsp;
+                </div>
+                <div className="modal-data">
+                  <input
+                    type="text"
+                    id="name1"
+                    placeholder="Enter your Name"
+                    required
+                  />
+                  <br />
+                  <input
+                    type="number"
+                    id="age1"
+                    placeholder="Enter your Age"
+                    required
+                  />
+                  <br />
+                  <input
+                    type="text"
+                    id="uname1"
+                    placeholder="Enter Username"
+                    required
+                  />
+                  <br />
+                  <input
+                    type="password"
+                    id="psw1"
+                    placeholder="Enter Password"
+                    required
+                  />
+                </div>
               </div>
-              <div className="modal-footer">
+              <div className="modal-footer" id="signup-footer">
                 <button
                   type="button"
                   className="btn btn-secondary"
@@ -161,29 +168,34 @@ export class Modal extends Component {
             </div>
             <form id="pehla">
               <div className="modal-body">
-                <label>
-                  <b>Username </b>
-                </label>&emsp;
-                <input
-                  type="text"
-                  id="uname2"
-                  placeholder="Enter Username"
-                  name="uname"
-                  required
-                />
-                <br />
-                <label>
-                  <b>Password </b>
-                </label>&emsp;
-                <input
-                  type="password"
-                  id="psw2"
-                  placeholder="Enter Password"
-                  name="psw"
-                  required
-                />
+                <div class="modal-head">
+                  <label>
+                    <b>Username </b>
+                  </label>&emsp;
+                  <br />
+                  <label>
+                    <b>Password </b>
+                  </label>&emsp;
+                </div>
+                <div className="modal-data">
+                  <input
+                    type="text"
+                    id="uname2"
+                    placeholder="Enter Username"
+                    name="uname"
+                    required
+                  />
+                  <br />
+                  <input
+                    type="password"
+                    id="psw2"
+                    placeholder="Enter Password"
+                    name="psw"
+                    required
+                  />
+                </div>
               </div>
-              <div className="modal-footer">
+              <div className="modal-footer" id="signin-footer">
                 <button
                   type="button"
                   className="btn btn-secondary"

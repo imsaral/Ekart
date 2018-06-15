@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Footer } from "./Footer.js";
 import "./CSS/style.css";
 import { Link, browserHistory } from "react-router";
 
@@ -165,7 +166,8 @@ export class Cart extends Component {
           </tr>
         </thead>
         <tbody>{this.renderProductsInCart()}</tbody>
-      </table>
+      </table>,
+      <Footer />
     ];
   }
 }

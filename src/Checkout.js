@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Footer } from "./Footer.js";
 import "./CSS/style.css";
 import { Link, browserHistory } from "react-router";
 
@@ -194,7 +195,8 @@ export class Checkout extends Component {
             </form>
           </div>
         </div>
-      </div>
+      </div>,
+      <Footer />
     ];
   }
 }

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router";
-
+import { Footer } from "./Footer.js";
 import "./CSS/style.css";
 
 export class Payment extends Component {
@@ -106,7 +106,8 @@ export class Payment extends Component {
             Make a New Order
           </Link>
         </center>
-      </div>
+      </div>,
+      <Footer />
     ];
   }
 }

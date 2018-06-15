@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Navbar } from "./Navbar.js";
 import { Link } from "react-router";
+import { Footer } from "./Footer.js";
 
 import "./CSS/dkecs.css";
 import "./CSS/style.css";
@@ -10,6 +11,7 @@ const setData = (
   prodId,
   title,
   imageUrl,
+  imageUrlMed,
   mrp,
   sellingPrice,
   discount,
@@ -22,6 +24,7 @@ const setData = (
   window.productID = prodId;
   window.title = title;
   window.imageUrl = imageUrl;
+  window.imageUrlMed = imageUrlMed;
   window.mrp = mrp;
   window.sellingPrice = sellingPrice;
   window.discount = discount;
@@ -36,6 +39,7 @@ const Card = ({
   prodId,
   title,
   imageUrl,
+  imageUrlMed,
   mrp,
   sellingPrice,
   discount,
@@ -60,6 +64,7 @@ const Card = ({
                 { prodId },
                 { title },
                 { imageUrl },
+                { imageUrlMed },
                 { mrp },
                 { sellingPrice },
                 { discount },
@@ -219,6 +224,7 @@ export class Cards extends Component {
               prodId={this.state.data[index]["productId"]}
               title={this.state.data[index]["title"]}
               imageUrl={this.state.data[index]["imageUrlStr"].split(";")[0]}
+              imageUrlMed={this.state.data[index]["imageUrlStr"].split(";")[1]}
               mrp={this.state.data[index]["mrp"]}
               sellingPrice={this.state.data[index]["sellingPrice"]}
               discount={disc}
@@ -274,7 +280,9 @@ export class Product extends Component {
       sellingPrice: sellingPrice,
       title: title
     };
-    var newArray = JSON.parse(localStorage.getItem("cart"));
+    var newArray = localStorage.getItem("cart")
+      ? JSON.parse(localStorage.getItem("cart"))
+      : [];
     newArray.push(obj);
     var json = JSON.stringify(newArray);
     localStorage.setItem("cart", json);
@@ -296,9 +304,9 @@ export class Product extends Component {
       return [
         <Navbar items={this.state.count} />,
         <div id="product-div">
-          <div id="product-image">
+          <div className="product-image">
             <img
-              src={window.imageUrl.imageUrl}
+              src={window.imageUrlMed.imageUrlMed}
               className="dk_mf2_158 img-responsive"
             />
           </div>
@@ -339,7 +347,8 @@ export class Product extends Component {
               ADD TO <i id="btncart" className="fas fa-shopping-cart" />
             </button>
           </div>
-        </div>
+        </div>,
+        <Footer />
       ];
     }
   }
