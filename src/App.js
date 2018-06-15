@@ -7,7 +7,6 @@ import "./CSS/theme.css";
 
 export default class App extends Component {
   render() {
-    console.log("acas", this.props.route.url);
-    return <Static url={this.props.route.url} />;
+    return <Static url={this.props.route.url} crumb={this.props.route.crumb} />;
   }
 }

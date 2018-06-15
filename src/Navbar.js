@@ -9,7 +9,7 @@ import mens from "./images/mens.jpg";
 import womens from "./images/womens.jpg";
 import kids from "./images/kids.jpg";
 import menu from "./images/menu.png";
-import image from "./images/image.png";
+import image from "./images/image.jpg";
 import mens1 from "./images/mens1.jpg";
 import womens1 from "./images/womens1.jpg";
 import kid1 from "./images/kid1.jpg";
@@ -54,7 +54,7 @@ export class Navbar extends Component {
                       <Link to="men_bottomwear">Bottom Wear</Link>
                     </li>
                     <li>
-                      <Link to="men_ethnicwear">Indian and Festive Wear</Link>
+                      <Link to="men_ethnicwear">Ethnic Wear</Link>
                     </li>
                     <li>
                       <Link to="men_jackets">Jackets</Link>
@@ -69,10 +69,10 @@ export class Navbar extends Component {
                       <Link to="women_westernwear">Western Wear</Link>
                     </li>
                     <li>
-                      <Link to="women_indianwear">Indian and Fusion Wear</Link>
+                      <Link to="women_indianwear">Indian Wear</Link>
                     </li>
                     <li>
-                      <Link to="women_activewear">Sports and Active Wear</Link>
+                      <Link to="women_activewear">Active Wear</Link>
                     </li>
                     <li>
                       <Link to="women_sleepwear">Sleepwear</Link>
@@ -92,7 +92,9 @@ export class Navbar extends Component {
             </div>
           </div>
           <div className="col-xs-9 dk_mf2_23">
-            <img src={image} className="dk_mf2_32" />
+            <Link to="/">
+              <img src={image} className="dk_mf2_32" />
+            </Link>
           </div>
           <div className="col-xs-1 dk_mf2_24">
             <a
@@ -111,11 +113,9 @@ export class Navbar extends Component {
           </div>
           <div className="col-xs-1 dk_mf2_25">
             <Link to="cart" className="dk_mf2_36">
-              {/* <a href="cart.php" className="dk_mf2_36"> */}
               <i id="cart" className="fas fa-shopping-cart dk_mf2_35">
                 <span className="dk_mf2_35plus">{this.props.items}</span>
               </i>
-              {/* </a> */}
             </Link>
           </div>
         </div>
@@ -140,9 +140,9 @@ export class Navbar extends Component {
         <div className="dk_mf2_81">
           <ul className="dk_mf2_82">
             <li className="dk_mf2_83">
-              <a href="#" className="dk_mf2_84">
+              <Link to="/" className="dk_mf2_84">
                 100% buyer protection | Free Shipping above INR 999
-              </a>
+              </Link>
             </li>
           </ul>
           <ul className="dk_mf2_82 dk_mf2_85">
@@ -167,7 +167,9 @@ export class Navbar extends Component {
 
         <div className="dk_mf2_2">
           <div className="dk_mf2_3 logo">
-            <img src={image} className="dk_mf2_4" />
+            <Link to="/">
+              <img src={image} className="dk_mf2_4" />
+            </Link>
           </div>
           <div className="dk_mf2_5">
             <div className="dk_mf2_6 search_input">
@@ -188,11 +190,9 @@ export class Navbar extends Component {
           </div>
           <div className="dk_mf2_15 cart-button">
             <Link to="cart" className="dk_mf2_16">
-              {/* <a href="cart.php" className="dk_mf2_16"> */}
               <i id="cart" className="fas fa-shopping-cart fa-2x dk_mf2_17">
                 <span className="dk_mf2_18plus">{this.props.items}</span>
               </i>
-              {/* </a> */}
             </Link>
           </div>
         </div>
@@ -209,7 +209,7 @@ export class Navbar extends Component {
                     <Link to="men_bottomwear">Bottom Wear</Link>
                   </li>
                   <li>
-                    <Link to="men_ethnicwear">Indian and Festive Wear</Link>
+                    <Link to="men_ethnicwear">Ethnic Wear</Link>
                   </li>
                   <li>
                     <Link to="men_jackets">Jackets</Link>
@@ -226,10 +226,10 @@ export class Navbar extends Component {
                     <Link to="women_westernwear">Western Wear</Link>
                   </li>
                   <li>
-                    <Link to="women_indianwear">Indian and Fusion Wear</Link>
+                    <Link to="women_indianwear">Indian Wear</Link>
                   </li>
                   <li>
-                    <Link to="women_activewear">Sports and Active Wear</Link>
+                    <Link to="women_activewear">Active Wear</Link>
                   </li>
                   <li>
                     <Link to="women_sleepwear">Sleepwear</Link>

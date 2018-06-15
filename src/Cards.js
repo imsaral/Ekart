@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import { Navbar } from "./Navbar.js";
+import { Link } from "react-router";
 import "./CSS/dkecs.css";
 import "./CSS/pushy.css";
 import "./CSS/style.css";
@@ -7,11 +9,37 @@ import mens from "./images/mens.jpg";
 import womens from "./images/womens.jpg";
 import kids from "./images/kids.jpg";
 import menu from "./images/menu.png";
-import image from "./images/image.png";
+import image from "./images/image.jpg";
 import mens1 from "./images/mens1.jpg";
 import womens1 from "./images/womens1.jpg";
 import kid1 from "./images/kid1.jpg";
-import { Navbar } from "./Navbar.js";
+
+const setData = (
+  prodId,
+  title,
+  imageUrl,
+  mrp,
+  sellingPrice,
+  discount,
+  description,
+  productUrl,
+  productBrand,
+  sellerName,
+  sellerAverageRating
+) => {
+  // console.log(window.productID);
+  window.productID = prodId;
+  window.title = title;
+  window.imageUrl = imageUrl;
+  window.mrp = mrp;
+  window.sellingPrice = sellingPrice;
+  window.discount = discount;
+  window.description = description;
+  window.productUrl = productUrl;
+  window.productBrand = productBrand;
+  window.sellerName = sellerName;
+  window.sellerAverageRating = sellerAverageRating;
+};
 
 const Card = ({
   prodId,
@@ -20,31 +48,66 @@ const Card = ({
   mrp,
   sellingPrice,
   discount,
-  handleClick
-}) => (
-  <div className="col-lg-3 col-md-3 col-sm-4 col-xs-6 dk_mf2_153">
-    <div className="col-xs-12 dk_mf2_154">
-      <a href="product_profile.php" className="dk_mf2_155">
+  handleClick,
+  description,
+  productUrl,
+  productBrand,
+  sellerName,
+  sellerAverageRating
+}) => {
+  // setID();
+  return (
+    <div className="col-lg-3 col-md-3 col-sm-4 col-xs-6 dk_mf2_153">
+      <div className="col-xs-12 dk_mf2_154">
         <div className="col-xs-12 dk_mf2_156">
-          <div className="dk_mf2_157">
-            <img src={imageUrl} className="dk_mf2_158 img-responsive" />
-          </div>
-          <div className="dk_mf2_159">
-            <span className="dk_mf2_160">{title}</span>
-          </div>
-          <div className="dk_mf2_163">
-            <span className="dk_mf2_164">Rs. {sellingPrice}</span>
-            <span className="dk_mf2_165">Rs. {mrp}</span>
-            <span className="dk_mf2_166">({discount.toFixed(0)}% OFF)</span>
+          {/* <Link to="product" className="dk_mf2_155"> */}
+          <Link
+            to="product"
+            className="dk_mf2_155"
+            onClick={() =>
+              setData(
+                { prodId },
+                { title },
+                { imageUrl },
+                { mrp },
+                { sellingPrice },
+                { discount },
+                { description },
+                { productUrl },
+                { productBrand },
+                { sellerName },
+                { sellerAverageRating }
+              )
+            }
+          >
+            <div className="dk_mf2_157">
+              <img src={imageUrl} className="dk_mf2_158 img-responsive" />
+            </div>
+            <div className="dk_mf2_159">
+              <span className="dk_mf2_160">{title}</span>
+            </div>
+            <div className="dk_mf2_163">
+              <span className="dk_mf2_164">Rs. {sellingPrice}</span>
+              <span className="dk_mf2_165">Rs. {mrp}</span>
+              <span className="dk_mf2_166">({discount.toFixed(0)}% OFF)</span>
+            </div>
+          </Link>
+          {/* </Link> */}
+          <div className="text-center">
+            <button
+              id={prodId}
+              onClick={handleClick}
+              type="button"
+              className="btn btn-outline-danger"
+            >
+              ADD TO <i id="btncart" className="fas fa-shopping-cart" />
+            </button>
           </div>
         </div>
-      </a>
-      <button id={prodId} onClick={handleClick}>
-        ADD TO CART
-      </button>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export class Cards extends Component {
   constructor(props) {
@@ -106,18 +169,13 @@ export class Cards extends Component {
     this.setState({ cart: newArray }, () => {
       var json = JSON.stringify(this.state.cart);
       localStorage.setItem("cart", json);
-      // alert("Item added to cart successfully");
       var obj1 = JSON.parse(localStorage.getItem("cart"));
-      console.log(obj1);
-      // var handler = this.props.handler;
       var e = this.props.items + 1;
       this.props.handler(e);
     });
   };
   componentDidMount() {
-    // Typical usage (don't forget to compare props):
     var url = this.props.url;
-    // "http://101.53.137.41/api/?cat=Apparels_Men_Polos-T-Shirts&count=100&offset=0";
     fetch(url)
       .then(response => response.json())
       .then(response => {
@@ -135,10 +193,8 @@ export class Cards extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    // Typical usage (don't forget to compare props):
     if (this.props.url !== prevProps.url) {
       var url = this.props.url;
-      // "http://101.53.137.41/api/?cat=Apparels_Men_Polos-T-Shirts&count=100&offset=0";
       fetch(url)
         .then(response => response.json())
         .then(response => {
@@ -161,7 +217,6 @@ export class Cards extends Component {
       return elements;
     } else {
       for (let index in this.state.data) {
-        // console.log(index);
         let disc =
           ((this.state.data[index]["mrp"] -
             this.state.data[index]["sellingPrice"]) /
@@ -179,6 +234,13 @@ export class Cards extends Component {
               handleClick={() =>
                 this.addToCart(this.state.data[index]["productId"])
               }
+              description={this.state.data[index]["description"]}
+              productUrl={this.state.data[index]["productUrl"]}
+              productBrand={this.state.data[index]["productBrand"]}
+              sellerName={this.state.data[index]["sellerName"]}
+              sellerAverageRating={
+                this.state.data[index]["sellerAverageRating"]
+              }
             />
           </div>
         );
@@ -193,5 +255,68 @@ export class Cards extends Component {
         <div className="container dk_mf2_152">{this.renderProducts()}</div>
       </div>
     ];
+  }
+}
+
+export class Product extends Component {
+  render() {
+    if (window.productID == undefined) {
+      return <h3>kucho</h3>;
+    } else {
+      // var imageSrc = this.state.data[i]["imageUrlStr"].split(";")[1];
+      // return (
+      //   <h1>
+      //     Product Reached {window.productID.prodId}
+      //     {window.title.title}
+      //     {window.imageUrl.imageUrl}
+      //     {window.mrp.mrp}
+      //     {window.sellingPrice.sellingPrice}
+      //     {window.discount.discount}
+      //     {window.productUrl.productUrl}
+      //     {window.productBrand.productBrand}
+      //     {window.sellerName.sellerName}
+      //     {window.sellerAverageRating.sellerAverageRating}
+      //     {window.description.description}
+      //   </h1>
+      // );
+      return [
+        // <Navbar />,
+        <div id="product-div">
+          <div id="product-image">
+            <img
+              src={window.imageUrl.imageUrl}
+              className="dk_mf2_158 img-responsive"
+            />
+          </div>
+          <div id="product-data">
+            <h1>{window.title.title}</h1>
+            <h3>
+              <span class="product-head">Brand:- </span>
+              {window.productBrand.productBrand}
+            </h3>
+            <h4>
+              <span class="product-head">Seller:- </span>
+              {window.sellerName.sellerName} ({
+                window.sellerAverageRating.sellerAverageRating
+              }/5)
+            </h4>
+            <br />
+            <span id="product-mrp">Rs. {window.mrp.mrp}</span>
+            <span id="product-sp">
+              &nbsp;&nbsp;Rs. {window.sellingPrice.sellingPrice}&nbsp;&nbsp;
+            </span>
+            <span id="product-disc">
+              {window.discount.discount.toFixed(0)}% OFF
+            </span>
+            <br />
+            <br />
+            <p>{window.description.description}</p>
+            <a href={window.productUrl.productUrl} className="btn btn-success">
+              View On Flipkart
+            </a>
+          </div>
+        </div>
+      ];
+    }
   }
 }

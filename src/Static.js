@@ -4,6 +4,7 @@ import { Modal } from "./Modal.js";
 import { Carousel } from "./Carousel.js";
 import { Navbar } from "./Navbar.js";
 import { Cards } from "./Cards.js";
+import { Crumbs } from "./Crumbs.js";
 import "./CSS/dkecs.css";
 import "./CSS/pushy.css";
 import "./CSS/style.css";
@@ -12,7 +13,7 @@ import mens from "./images/mens.jpg";
 import womens from "./images/womens.jpg";
 import kids from "./images/kids.jpg";
 import menu from "./images/menu.png";
-import image from "./images/image.png";
+import image from "./images/image.jpg";
 import mens1 from "./images/mens1.jpg";
 import womens1 from "./images/womens1.jpg";
 import kid1 from "./images/kid1.jpg";
@@ -75,7 +76,7 @@ export class Static extends Component {
     var handler = this.handler;
     if (
       this.props.url ===
-      "http://101.53.137.41/api/?cat=Apparels_Men_Polos-T-Shirts&count=100&offset=0"
+      "http://101.53.137.41/api/?cat=Apparels&count=100&offset=1377;"
     ) {
       return [
         <Navbar items={this.state.itemsInCart} />,
@@ -93,7 +94,7 @@ export class Static extends Component {
           items={this.state.itemsInCart}
         />,
         <div className="container-fluid dkf_1">
-          Copyright 2018 xyz.com. All Rights Reserved.
+          Copyright 2018 ajfashions.com . All Rights Reserved.
         </div>
       ];
     } else {
@@ -105,13 +106,14 @@ export class Static extends Component {
           &uarr;
         </a>,
         <Modal />,
+        <Crumbs crumb={this.props.crumb} />,
         <Cards
           url={this.props.url}
           handler={handler.bind(this)}
           items={this.state.itemsInCart}
         />,
         <div className="container-fluid dkf_1">
-          Copyright 2018 xyz.com. All Rights Reserved.
+          Copyright 2018 ajfashions.com . All Rights Reserved.
         </div>
       ];
     }

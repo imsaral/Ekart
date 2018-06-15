@@ -1,3 +1,40 @@
+#product-div {
+  margin-top: 100px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+#product-image {
+  width: 20%;
+  height: 100%;
+  margin-bottom: 300px;
+  float: left;
+}
+#product-data {
+  width: 100%;
+  /* float: right; */
+}
+.product-head {
+  font-size: 80%;
+}
+#product-mrp {
+  color: gray;
+  text-decoration: line-through;
+}
+#product-sp {
+  font-size: 250%;
+}
+#product-disc {
+  color: red;
+}
+.mycrumb {
+  margin-top: 40px;
+}
+
+.btn-outline-danger {
+  margin-top: 5%;
+  margin-bottom: 5%;
+}
+
 .overlay {
   height: 100%;
   width: 0;

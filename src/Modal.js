@@ -7,7 +7,7 @@ import mens from "./images/mens.jpg";
 import womens from "./images/womens.jpg";
 import kids from "./images/kids.jpg";
 import menu from "./images/menu.png";
-import image from "./images/image.png";
+import image from "./images/image.jpg";
 import mens1 from "./images/mens1.jpg";
 import womens1 from "./images/womens1.jpg";
 import kid1 from "./images/kid1.jpg";

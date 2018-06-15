@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router";
 import "./CSS/dkecs.css";
 import "./CSS/pushy.css";
 import "./CSS/style.css";
@@ -7,7 +8,7 @@ import mens from "./images/mens.jpg";
 import womens from "./images/womens.jpg";
 import kids from "./images/kids.jpg";
 import menu from "./images/menu.png";
-import image from "./images/image.png";
+import image from "./images/image.jpg";
 import mens1 from "./images/mens1.jpg";
 import womens1 from "./images/womens1.jpg";
 import kid1 from "./images/kid1.jpg";
@@ -22,13 +23,19 @@ export class Carousel extends Component {
       >
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img className="d-block w-100" src={mens} alt="First slide" />
+            <Link to="men">
+              <img className="d-block w-100" src={mens} alt="First slide" />
+            </Link>
           </div>
           <div className="carousel-item">
-            <img className="d-block w-100" src={womens} alt="Second slide" />
+            <Link to="women">
+              <img className="d-block w-100" src={womens} alt="Second slide" />
+            </Link>
           </div>
           <div className="carousel-item">
-            <img className="d-block w-100" src={kids} alt="Third slide" />
+            <Link to="kids">
+              <img className="d-block w-100" src={kids} alt="Third slide" />
+            </Link>
           </div>
         </div>
         <a
